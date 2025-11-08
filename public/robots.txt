@@ -1,0 +1,20 @@
+# robots.txt for Ivan Deinichenko Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ivandeinichenko.github.io/cv/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Disallow specific files
+Disallow: /assets/
+Disallow: /*.pdf$
+
+# Allow main pages
+Allow: /index.html
+Allow: /css/
+Allow: /js/
+

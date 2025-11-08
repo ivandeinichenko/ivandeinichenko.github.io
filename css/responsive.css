@@ -1,0 +1,757 @@
+/* Small Mobile (up to 374px) */
+@media (max-width: 374px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (375px - 767px) */
+@media (max-width: 767px) {
+  /* Typography */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Navigation */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-bg);
+    border-left: 1px solid var(--glass-border);
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    gap: 0;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -4px 0 20px var(--shadow-color);
+    overflow-y: auto;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .nav-menu li:last-child {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  /* Light theme - simple horizontal lines between items */
+  :root:not([data-theme]) .nav-menu li,
+  [data-theme='light'] .nav-menu li {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.15);
+    margin-bottom: 0;
+    border-radius: 0;
+    padding-inline: 0;
+    box-shadow: none;
+  }
+
+  :root:not([data-theme]) .nav-menu li:last-child,
+  [data-theme='light'] .nav-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 1.25rem 0;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  /* Light theme - add hover effect for menu items */
+  :root:not([data-theme]) .nav-link:hover,
+  [data-theme='light'] .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+
+  /* Overlay when menu is open */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Theme Toggle - Hide on mobile, will be inside menu */
+  .theme-toggle {
+    display: none;
+  }
+
+  /* Theme toggle inside mobile menu */
+  .nav-menu-theme {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: none;
+  }
+
+  .theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+  }
+
+  /* Apply dark theme styles to light theme as well */
+  :root:not([data-theme]) .theme-toggle-wrapper,
+  [data-theme='light'] .theme-toggle-wrapper {
+    background: var(--color-surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: none;
+    outline: 1px solid #808080;
+  }
+
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+  }
+
+  .theme-toggle-switch {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    background: var(--color-surface);
+    border: 2px solid var(--glass-border);
+    border-radius: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle-switch:hover {
+    border-color: var(--color-primary);
+  }
+
+  .toggle-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--color-text-secondary);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Dark theme - slider on right */
+  [data-theme='dark'] .theme-toggle-switch {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  [data-theme='dark'] .theme-toggle-switch .toggle-slider {
+    left: calc(100% - 22px);
+    background: white;
+  }
+
+  [data-theme='dark'] .moon-icon {
+    color: var(--color-primary);
+  }
+
+  /* Light theme - use same styles as dark theme */
+  [data-theme='light'] .theme-toggle-switch {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  [data-theme='light'] .theme-toggle-switch .toggle-slider {
+    left: calc(100% - 22px);
+    background: white;
+  }
+
+  [data-theme='light'] .moon-icon {
+    color: var(--color-primary);
+  }
+
+  /* Default (no theme set) - use same styles as dark theme */
+  :root:not([data-theme]) .theme-toggle-switch {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  :root:not([data-theme]) .theme-toggle-switch .toggle-slider {
+    left: calc(100% - 22px);
+    background: white;
+  }
+
+  :root:not([data-theme]) .theme-toggle-switch[aria-checked='false'] .toggle-slider {
+    left: 2px;
+  }
+
+  .theme-icon.sun-icon {
+    color: var(--color-primary);
+  }
+
+  .theme-icon.moon-icon {
+    color: var(--color-text-secondary);
+  }
+
+  .theme-toggle-wrapper:has(.theme-toggle-switch[aria-checked='true']) .theme-icon.sun-icon {
+    color: var(--color-text-secondary);
+  }
+  .theme-toggle-wrapper:has(.theme-toggle-switch[aria-checked='true']) .theme-icon.moon-icon {
+    color: var(--color-primary);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100svh;
+    padding: 5rem 1rem 2rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* About Section */
+  .about-card {
+    padding: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  /* Skills Section */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  /* Timeline */
+  .timeline::before {
+    left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-marker {
+    left: 7px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-meta {
+    text-align: left;
+    width: 100%;
+  }
+
+  .timeline-title {
+    font-size: 1.125rem;
+  }
+
+  .timeline-tech {
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  /* Achievements */
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .achievement-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .achievement-metrics {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .metric-number {
+    font-size: 1.75rem;
+  }
+
+  /* Contact */
+  .contact-card {
+    padding: 2rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-method {
+    padding: 1.25rem;
+  }
+
+  .method-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .method-value {
+    font-size: 0.9rem;
+    word-break: break-all;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu-theme {
+    display: none;
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Container */
+  .container {
+    max-width: 720px;
+  }
+
+  /* Navigation */
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  /* Hero */
+  .hero-cta {
+    gap: 1rem;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Timeline */
+  .timeline-item {
+    padding-left: 60px;
+  }
+
+  .timeline-content {
+    padding: 2rem;
+  }
+
+  /* Achievements */
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact */
+  .contact-methods {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet Landscape / Small Desktop (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  /* Container */
+  .container {
+    max-width: 960px;
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Achievements */
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
+  /* Container */
+  .container {
+    max-width: 1280px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  /* Hero */
+  .hero-description {
+    font-size: 1.25rem;
+  }
+
+  /* About */
+  .about-text {
+    font-size: 1.25rem;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-number {
+    font-size: 3.5rem;
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Timeline */
+  .timeline {
+    max-width: 1000px;
+  }
+
+  /* Achievements */
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Ultra Wide Screens (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+/* Landscape Mobile Devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .nav-link {
+    padding: 0.75rem;
+  }
+
+  .theme-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  .timeline-content:hover {
+    transform: none;
+  }
+
+  /* Use active state instead */
+  .btn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print Styles */
+@media print {
+  /* Hide non-essential elements */
+  .theme-toggle,
+  .nav,
+  .particles-canvas,
+  .scroll-indicator,
+  .hero-cta,
+  .contact-methods a {
+    display: none !important;
+  }
+
+  /* Reset colors for print */
+  body {
+    background: white;
+    color: black;
+  }
+
+  .glass-effect {
+    background: white;
+    border: 1px solid #ccc;
+  }
+
+  /* Ensure readable fonts */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  /* Page breaks */
+  .section {
+    page-break-inside: avoid;
+  }
+
+  .timeline-item,
+  .achievement-card,
+  .skill-category {
+    page-break-inside: avoid;
+  }
+
+  /* Show URLs for links */
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 10pt;
+    color: #666;
+  }
+}
+
+/* Container Queries (Progressive Enhancement) */
+@supports (container-type: inline-size) {
+  .skill-category {
+    container-type: inline-size;
+  }
+
+  @container (max-width: 250px) {
+    .skill-name {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* Dark Mode Media Query */
+@media (prefers-color-scheme: dark) {
+  /* Default to dark theme if user prefers it and hasn't manually selected */
+  :root:not([data-theme]) {
+    --color-primary: #2dd4bf;
+    --color-secondary: #5eead4;
+    --color-accent: #99f6e4;
+    --color-bg: #0f172a;
+    --color-surface: rgba(30, 41, 59, 0.8);
+    --color-text: #f0fdfa;
+    --color-text-secondary: #94a3b8;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+    --glow-color: rgba(45, 212, 191, 0.6);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Safe Area Insets (for notched devices) */
+@supports (padding: env(safe-area-inset-top)) {
+  .hero {
+    padding-top: calc(6rem + env(safe-area-inset-top));
+  }
+
+  .nav {
+    margin-top: env(safe-area-inset-top);
+  }
+
+  .footer {
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+}
