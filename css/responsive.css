@@ -313,10 +313,17 @@
   }
 
   .dropdown-menu {
+    top: auto;
+    bottom: calc(100% + 0.5rem);
     left: 0;
     right: 0;
     min-width: auto;
     width: 100%;
+    transform: translateY(10px);
+  }
+
+  .dropdown.active .dropdown-menu {
+    transform: translateY(0);
   }
 
   /* About Section */
