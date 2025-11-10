@@ -241,29 +241,6 @@ import { logger } from './utils/logger.js';
     revealElements.forEach(element => revealObserver.observe(element));
   }
 
-  function initRippleEffect() {
-    const buttons = document.querySelectorAll('.btn');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', function (e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple-effect');
-
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-      });
-    });
-  }
-
   function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver(entries => {
@@ -378,7 +355,6 @@ import { logger } from './utils/logger.js';
     initCounters();
     initSkillBars();
     initScrollReveal();
-    initRippleEffect();
     initLazyLoading();
     initExternalLinks();
     initBackToTop();
