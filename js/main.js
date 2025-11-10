@@ -267,6 +267,65 @@ import { logger } from './utils/logger.js';
     });
   }
 
+  function initDropdown() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+
+      if (!toggle || !menu) return;
+
+      // Toggle dropdown on button click
+      toggle.addEventListener('click', e => {
+        e.stopPropagation();
+        const isActive = dropdown.classList.contains('active');
+
+        // Close all other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('active');
+            d.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current dropdown
+        if (isActive) {
+          dropdown.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          dropdown.classList.add('active');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', e => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close dropdown on Escape key
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && dropdown.classList.contains('active')) {
+          dropdown.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+
+      // Close dropdown when clicking on menu item
+      menu.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          dropdown.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  }
+
   function initBackToTop() {
     const scrollThreshold = 500;
     let backToTopBtn = document.getElementById('back-to-top');
@@ -358,6 +417,7 @@ import { logger } from './utils/logger.js';
     initLazyLoading();
     initExternalLinks();
     initBackToTop();
+    initDropdown();
 
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       monitorPerformance();

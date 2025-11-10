@@ -308,6 +308,17 @@
     justify-content: center;
   }
 
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    left: 0;
+    right: 0;
+    min-width: auto;
+    width: 100%;
+  }
+
   /* About Section */
   .about-card {
     padding: 2rem;
