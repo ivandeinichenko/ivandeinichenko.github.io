@@ -18,7 +18,7 @@
   --color-text-secondary: #475569;
 
   /* Glassmorphism Effects */
-  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(255, 255, 255, 0.18);
   --glass-shadow: rgba(0, 0, 0, 0.1);
 
@@ -51,7 +51,7 @@
   --color-text-secondary: #94a3b8;
 
   /* Glassmorphism Effects */
-  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-bg: rgba(30, 41, 59, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: rgba(0, 0, 0, 0.3);
 
