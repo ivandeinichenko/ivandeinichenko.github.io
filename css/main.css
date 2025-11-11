@@ -113,8 +113,7 @@ svg {
 
 .glass-effect {
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   box-shadow: 0 8px 32px var(--glass-shadow);
