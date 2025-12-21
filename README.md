@@ -1,6 +1,6 @@
 # Ivan Deinichenko - Portfolio Website
 
-Modern, tech-inspired portfolio website showcasing my experience as a Senior Frontend Developer. Built with vanilla HTML, CSS, and JavaScript, featuring glassmorphism effects, particle animations, and full theme switching.
+Modern, tech-inspired portfolio website showcasing my experience as a Senior Frontend Engineer. Built with vanilla HTML, CSS, and JavaScript, featuring glassmorphism effects, particle animations, and full theme switching.
 
 ## Features
 
@@ -116,7 +116,11 @@ For more details, see [Build Setup Guide](docs/BUILD_SETUP.md).
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+© 2025 Ivan Deinichenko. All rights reserved.
+
+The source code of this website is available for viewing purposes only.
+No part of this project (including design, content, and code) may be
+reused, copied, modified, or distributed without explicit permission.
 
 ## Contact
 

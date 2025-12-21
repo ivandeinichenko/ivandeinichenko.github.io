@@ -1,7 +1,7 @@
 {
   "name": "cv-github-pages",
   "version": "1.0.0",
-  "description": "Ivan Deinichenko - Senior Frontend Developer Portfolio",
+  "description": "Ivan Deinichenko - Senior Frontend Engineer Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
