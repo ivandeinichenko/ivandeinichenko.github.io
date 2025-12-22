@@ -817,6 +817,7 @@ svg {
   color: var(--color-text-secondary);
   margin-bottom: 1rem;
   line-height: 1.7;
+  text-align: justify;
 }
 
 .timeline-tech {
@@ -848,6 +849,7 @@ svg {
   position: relative;
   color: var(--color-text-secondary);
   font-size: 0.95rem;
+  text-align: justify;
 }
 
 .timeline-achievements li::before {
