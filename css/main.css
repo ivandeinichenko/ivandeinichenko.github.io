@@ -936,7 +936,7 @@ svg {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -952,6 +952,10 @@ svg {
 
 .resource-card:hover {
   transform: translateY(-10px);
+}
+
+.resource-card .btn {
+  justify-content: center;
 }
 
 .resource-icon {
@@ -983,6 +987,7 @@ svg {
   color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .resource-actions {
