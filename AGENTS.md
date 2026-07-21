@@ -64,7 +64,7 @@ css/
   themes.css          — цветовые токены; :root = тёмная тема, html[data-theme="light"]
   main.css            — layout и компоненты
   animations.css      — keyframes (riseIn, drawIn, blink) + prefers-reduced-motion
-  responsive.css      — единственный брейкпоинт 760px + print-стили
+  responsive.css      — брейкпоинты (900px — шапка, 760px — контент) + print
 js/
   theme-switcher.js   — состояние темы, системная тема, событие themechange
   main.js             — smooth-scroll, подсветка активного пункта меню

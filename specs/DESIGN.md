@@ -101,8 +101,11 @@ Restrained; CSS-only:
 
 1. **Header** — part no., nav, status, `DOWNLOAD CV ↓` (accent button, duplicate of the
    contact CTA), theme toggle `[light_mode]`/`[dark_mode]`.
-   Below 760px the row is too narrow for all of it, so the status disappears, the
-   part-number prefix shortens to `ID-13` and the CV button to `CV ↓`
+   The nav sits on the true centre of the viewport (equal `1fr` side columns, not
+   `space-between` — the identity is far narrower than the right-hand group).
+   Below ~900px the row can no longer hold everything, so the header wraps and the nav
+   moves to its own row; below 760px the status also disappears, the part-number prefix
+   shortens to `ID-13` and the CV button to `CV ↓`
 2. **Hero** — mono kicker line (name, role, "PRODUCTION GRADE", location), `IVAN` (accent) over
    `DEINICHENKO` (`--fg`) in Archivo Black,
    dimension line, one descriptive paragraph
@@ -136,10 +139,11 @@ The site is vanilla HTML/CSS/JS built with Vite (no framework, no runtime depend
 - `index.html` — all markup, plus `<head>`: SEO meta, canonical, Open Graph / Twitter,
   JSON-LD `Person`, favicon, non-blocking Google Fonts, GA gtag snippet.
 - `css/themes.css` — color tokens (§2) · `css/main.css` — layout and components (§4)
-  · `css/animations.css` — keyframes (§5) · `css/responsive.css` — 760px breakpoint + print.
+  · `css/animations.css` — keyframes (§5) · `css/responsive.css` — breakpoints + print.
 - `js/theme-switcher.js` — theme state, anti-flash, `themechange` event
   · `js/main.js` — smooth scroll, active nav · `js/analytics.js` — GA4 events.
 - `public/assets/` — favicon, CV PDF, og-image. Served from the site root.
 
-Responsive: single breakpoint at 760px (status hidden, check/location columns dropped,
-field-test metrics move under text). Hero scales via `clamp()`.
+Responsive: the header breaks at 900px (grid → wrapped rows, nav on its own line);
+content breaks at 760px (status hidden, check/location columns dropped, field-test
+metrics move under text). Hero scales via `clamp()`.

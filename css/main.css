@@ -101,8 +101,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
-  justify-content: space-between;
+  /* Equal side columns keep the nav on the true centre of the viewport.
+     space-between would align it to the midpoint between the identity and
+     the right-hand group, which are very different widths. The side columns
+     are `1fr` (i.e. minmax(auto, 1fr)), so on a narrow desktop they grow to
+     fit their content and the nav drifts off-centre instead of overflowing. */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 18px;
   border-bottom: 1px solid var(--line);
@@ -116,6 +121,7 @@ header {
 header nav {
   display: flex;
   gap: 26px;
+  justify-self: center;
 }
 
 header nav a {
@@ -130,6 +136,10 @@ header nav a.active {
   display: flex;
   gap: 18px;
   align-items: center;
+  justify-self: end;
+  /* Without this the grid may shrink this column to its min-content and
+     break "STATUS: ● AVAILABLE" and the button label across two lines. */
+  white-space: nowrap;
 }
 
 .hdr-cv-short {

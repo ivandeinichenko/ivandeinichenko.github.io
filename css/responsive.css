@@ -1,13 +1,17 @@
 /* ==========================================
    RESPONSIVE + PRINT
-   Single breakpoint at 760px.
+   Content breaks at 760px; the header needs to break earlier — see below.
    ========================================== */
 
-@media (max-width: 760px) {
-  /* The header can't fit part-no + 5 nav items + toggle on one line,
-     so it wraps: identity and toggle on top, nav on its own scrollable row. */
+/* Identity + nav + status + CV button + toggle need ~900px on one line.
+   Below that the header drops the desktop 3-column grid and wraps, with the
+   nav on its own row; otherwise the grid squeezes the nav column and the
+   links stack. The content breakpoint stays at 760px. */
+@media (max-width: 900px) {
   header {
+    display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 10px 18px;
     padding: 12px var(--pad-x);
   }
@@ -23,7 +27,9 @@
   header nav::-webkit-scrollbar {
     display: none;
   }
+}
 
+@media (max-width: 760px) {
   .hdr-status {
     display: none;
   }
