@@ -75,9 +75,10 @@ public/               — статика, копируется в корень �
   assets/             — favicon.ico, og-image.png (1200×630), pdf/CV_*.pdf
   robots.txt, sitemap.xml
 docs/                 — ⚠️ локальный каталог, исключён из git (.git/info/exclude)
+  DEVELOPMENT.md      — установка, команды, структура, деплой, траблшутинг
   DESIGN.md           — полная дизайн-спека
+  ENVIRONMENT_VARIABLES.md — VITE_ENABLE_LOGS и логгер
   og-image.html       — исходник og-image.png
-  ...                 — гайды (деплой, GitHub Pages, env-переменные)
 .claude/launch.json   — конфиг dev-сервера для preview (autoPort включён)
 ```
 
@@ -139,6 +140,12 @@ Header (sticky) → Hero → `// SPECIFICATIONS` → `// FIELD TESTS` →
 
 ## Деплой
 
-GitHub Pages из ветки `main` через `.github/workflows/deploy.yml`.
-Подробности — в `docs/` (DEPLOYMENT.md, GITHUB_PAGES_SETUP.md, BUILD_SETUP.md,
-ENVIRONMENT_VARIABLES.md).
+**Пуш в `main` публикует сайт** — `.github/workflows/deploy.yml` собирает проект
+и выкладывает `dist/` на GitHub Pages. Ручного шага нет, ветки `gh-pages` нет.
+Workflow также запускается вручную через Actions → Run workflow.
+
+На репозитории включены правила: подписанные коммиты и изменения через PR.
+Пуш напрямую в `main` проходит при наличии права обхода, но печатает нарушения.
+
+Подробности — в локальном `docs/DEVELOPMENT.md` (см. предупреждение про `docs/`
+в разделе «Структура»).

@@ -89,15 +89,21 @@ npm run lint
 
 ### Environment Variables
 
-The project uses environment variables for feature flags. See [Environment Variables Guide](docs/ENVIRONMENT_VARIABLES.md) for details.
+One flag, `VITE_ENABLE_LOGS`, gates the debug logger (`js/utils/logger.js`).
+Errors are always logged; everything else is suppressed unless it is `true`.
 
-**Quick setup for local development:**
 ```bash
 cp .env.example .env.local
 # Edit .env.local and set VITE_ENABLE_LOGS=true
 ```
 
-For more details, see [Build Setup Guide](docs/BUILD_SETUP.md).
+`.env.production` keeps it `false`, and CI sets it explicitly for release builds.
+
+## Deployment
+
+Pushing to `main` publishes the site: `.github/workflows/deploy.yml` builds the
+project and deploys `dist/` to GitHub Pages. There is no manual step and no
+`gh-pages` branch. The workflow can also be re-run by hand from the Actions tab.
 
 ## Browser Support
 
