@@ -98,7 +98,10 @@ Restrained; CSS-only:
 
 ## 6. Content structure (in order)
 
-1. **Header** — part no., nav, status, theme toggle `[light_mode]`/`[dark_mode]`
+1. **Header** — part no., nav, status, `DOWNLOAD CV ↓` (accent button, duplicate of the
+   contact CTA), theme toggle `[light_mode]`/`[dark_mode]`.
+   Below 760px the row is too narrow for all of it, so the status disappears, the
+   part-number prefix shortens to `ID-13` and the CV button to `CV ↓`
 2. **Hero** — mono kicker line (name, role, "PRODUCTION GRADE", location), surname in Archivo Black,
    dimension line, one descriptive paragraph
 3. **// SPECIFICATIONS** — skills as a spec table with `✓` verdicts. NEVER use skill bars or percentages

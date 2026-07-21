@@ -106,7 +106,8 @@ header {
   align-items: center;
   gap: 18px;
   border-bottom: 1px solid var(--line);
-  padding: 15px var(--pad-x);
+  /* 10px, not 15px: the CV button sets the row height now. */
+  padding: 10px var(--pad-x);
   font: 400 13px var(--font-mono);
   color: var(--muted);
   background: var(--bg);
@@ -127,8 +128,12 @@ header nav a.active {
 
 .hdr-right {
   display: flex;
-  gap: 22px;
+  gap: 18px;
   align-items: center;
+}
+
+.hdr-cv-short {
+  display: none;
 }
 
 #theme-toggle {
@@ -458,6 +463,13 @@ header nav a.active {
 .btn-primary:hover {
   color: var(--accent-fg);
   opacity: 0.9;
+}
+
+/* Compact .btn-primary for the header. Must come after .btn-primary:
+   same specificity, so source order decides. */
+.hdr-cv {
+  font-size: 12.5px;
+  padding: 7px 13px;
 }
 
 /* ---------- Contact ---------- */

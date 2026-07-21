@@ -28,6 +28,29 @@
     display: none;
   }
 
+  /* Identity + CV + toggle have to share one narrow row, so the CV button
+     drops to its short label, the "PART NO." prefix goes, and gaps tighten.
+     Without this the row exceeds 320px and the header breaks into three. */
+  .hdr-partno {
+    display: none;
+  }
+
+  .hdr-right {
+    gap: 10px;
+  }
+
+  .hdr-cv {
+    padding: 6px 10px;
+  }
+
+  .hdr-cv-full {
+    display: none;
+  }
+
+  .hdr-cv-short {
+    display: inline;
+  }
+
   .spec-grid {
     grid-template-columns: minmax(100px, 140px) 1fr;
   }
