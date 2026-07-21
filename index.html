@@ -139,7 +139,7 @@
   <div class="hdr-right">
     <span class="hdr-status">STATUS: <span class="accent"><span class="status-dot">●</span> AVAILABLE</span></span>
     <a class="btn-primary hdr-cv" href="/assets/pdf/CV_Ivan_Deinichenko_Senior_Frontend_Engineer.pdf?v=2" download
-       data-ga-event="cv_download" data-ga-location="header"><span class="hdr-cv-full">DOWNLOAD CV ↓</span><span
+       data-ga-event="cv_download" data-ga-location="header"><span class="hdr-cv-full">Download CV ↓</span><span
       class="hdr-cv-short">CV ↓</span></a>
     <button id="theme-toggle" aria-label="Toggle theme">[light_mode]</button>
   </div>
@@ -147,7 +147,12 @@
 
 <section class="hero">
   <div class="hero-label pad-x">IVAN DEINICHENKO — SENIOR FRONTEND ENGINEER · PRODUCTION GRADE · SERBIA / REMOTE</div>
-  <h1 class="hero-name black pad-x">Deinichenko</h1>
+  <!-- Whitespace between the spans is deliberate: they are display:block, so it
+       is not rendered, but it keeps the accessible name "Ivan Deinichenko". -->
+  <h1 class="hero-name black pad-x">
+    <span class="hero-first">Ivan</span>
+    <span class="hero-last">Deinichenko</span>
+  </h1>
   <div class="dim-line pad-x">
     <span class="tick">|←</span>
     <span class="dash l"></span>

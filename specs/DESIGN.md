@@ -14,7 +14,8 @@ Key metaphors (keep them consistent):
 - Header: `PART NO. ID-13` (ID = initials, 13 = years of experience) + `STATUS: ● AVAILABLE`
 - Sections are labeled like code comments: `// SPECIFICATIONS`, `// FIELD TESTS`, `// WORK LOG`,
   `// SIDE PROJECTS — OFF-DUTY OUTPUT`, `// CONTACT`
-- Hero: surname once, huge, with a dashed "dimension line" underneath (`|← 13 YEARS IN PRODUCTION →|`)
+- Hero: full name over two huge lines — `IVAN` in the accent colour above `DEINICHENKO` in `--fg` —
+  with a dashed "dimension line" underneath (`|← 13 YEARS IN PRODUCTION →|`)
   like an engineering drawing measurement
 - Contact block: "Ready to deploy." + a decorative barcode (`ID-13 · SRB`)
 
@@ -44,7 +45,7 @@ Rules:
 
 | Font | Role |
 |------|------|
-| **Archivo Black** | display only: hero surname, "Ready to deploy." heading. Always uppercase, `letter-spacing:-.01em` |
+| **Archivo Black** | display only: hero name, "Ready to deploy." heading. Always uppercase, `letter-spacing:-.01em` |
 | **Archivo** (400/500/700) | card titles (`font:700 18px`) |
 | **IBM Plex Mono** (400/500) | ALL structural text: header, nav, section labels, spec/log tables, metrics, buttons, footer, badges. Uppercase for labels |
 | **Instrument Sans** (400/500/600) | body/descriptive paragraphs only |
@@ -53,7 +54,7 @@ Scale:
 
 | Role | Size |
 |------|------|
-| hero surname | `clamp(34px, 9.5vw, 112px)` |
+| hero name (both lines) | `clamp(34px, 9.5vw, 112px)` |
 | contact heading | `clamp(28px, 3.6vw, 41px)` |
 | hero paragraph | `clamp(16px, 1.7vw, 19px)/1.65` |
 | card titles | 18px |
@@ -102,7 +103,8 @@ Restrained; CSS-only:
    contact CTA), theme toggle `[light_mode]`/`[dark_mode]`.
    Below 760px the row is too narrow for all of it, so the status disappears, the
    part-number prefix shortens to `ID-13` and the CV button to `CV ↓`
-2. **Hero** — mono kicker line (name, role, "PRODUCTION GRADE", location), surname in Archivo Black,
+2. **Hero** — mono kicker line (name, role, "PRODUCTION GRADE", location), `IVAN` (accent) over
+   `DEINICHENKO` (`--fg`) in Archivo Black,
    dimension line, one descriptive paragraph
 3. **// SPECIFICATIONS** — skills as a spec table with `✓` verdicts. NEVER use skill bars or percentages
 4. **// FIELD TESTS** — 3 featured engagements, each: title + dates, 1–2 sentence description,
