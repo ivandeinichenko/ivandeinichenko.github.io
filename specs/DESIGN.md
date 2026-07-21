@@ -45,12 +45,29 @@ Rules:
 | Font | Role |
 |------|------|
 | **Archivo Black** | display only: hero surname, "Ready to deploy." heading. Always uppercase, `letter-spacing:-.01em` |
-| **Archivo** (400/500/700) | card titles (`font:700 17px`) |
+| **Archivo** (400/500/700) | card titles (`font:700 18px`) |
 | **IBM Plex Mono** (400/500) | ALL structural text: header, nav, section labels, spec/log tables, metrics, buttons, footer, badges. Uppercase for labels |
 | **Instrument Sans** (400/500/600) | body/descriptive paragraphs only |
 
-Scale: hero surname `clamp(44px, 9vw, 104px)`; section labels 12px mono; tables 13.5px mono;
-descriptions 13.5–14px/1.6; hero paragraph `clamp(15px,1.6vw,18px)/1.65`.
+Scale:
+
+| Role | Size |
+|------|------|
+| hero surname | `clamp(34px, 9.5vw, 112px)` |
+| contact heading | `clamp(28px, 3.6vw, 41px)` |
+| hero paragraph | `clamp(16px, 1.7vw, 19px)/1.65` |
+| card titles | 18px |
+| contact paragraph | 15.5px/1.6 |
+| field-test descriptions | 15px/1.6 |
+| spec & log tables, card descriptions, log bullets | 14.5px |
+| field-test metrics, buttons, dates | 13.5px |
+| header, nav, section labels, hero kicker | 13px |
+| tech tags, meta rows, barcode label, footer | 12px–12.5px |
+
+The floor of the hero clamp is **34px, not 44px**: the surname is set on one line
+(`white-space:nowrap`), and above ~35px it overflows the padding box below ~360px viewports —
+where `.hero{overflow:hidden}` would silently clip it rather than scroll. Raise the `vw`
+coefficient or the ceiling if the hero should grow; leave the floor alone.
 
 Voice: English, terse, metric-driven. Numbers over adjectives ("SEO 40→100", "6× LCP",
 "2000+ components refactored (career)"). Mild datasheet irony is on-brand

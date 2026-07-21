@@ -76,7 +76,7 @@ a:hover {
 }
 
 .seclabel {
-  font: 400 12px var(--font-mono);
+  font: 400 13px var(--font-mono);
   color: var(--muted);
   margin-bottom: 12px;
 }
@@ -107,7 +107,7 @@ header {
   gap: 18px;
   border-bottom: 1px solid var(--line);
   padding: 15px var(--pad-x);
-  font: 400 12px var(--font-mono);
+  font: 400 13px var(--font-mono);
   color: var(--muted);
   background: var(--bg);
 }
@@ -132,7 +132,7 @@ header nav a.active {
 }
 
 #theme-toggle {
-  font: 400 12px var(--font-mono);
+  font: 400 13px var(--font-mono);
   color: var(--fg);
   background: none;
   border: none;
@@ -152,7 +152,7 @@ header nav a.active {
 }
 
 .hero-label {
-  font: 400 12px var(--font-mono);
+  font: 400 13px var(--font-mono);
   color: var(--muted);
   padding-bottom: 18px;
 }
@@ -161,7 +161,7 @@ header nav a.active {
   /* Lower bound is 34px, not the 44px of the original mock-up: the surname is
      set on one line (white-space:nowrap) and at 44px it overflows — and is
      silently clipped by .hero{overflow:hidden} — below ~360px viewports. */
-  font-size: clamp(34px, 9vw, 104px);
+  font-size: clamp(34px, 9.5vw, 112px);
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -177,7 +177,7 @@ header nav a.active {
 }
 
 .dim-line .tick {
-  font: 400 11px var(--font-mono);
+  font: 400 12px var(--font-mono);
   color: var(--accent);
 }
 
@@ -187,7 +187,7 @@ header nav a.active {
 }
 
 .hero-desc {
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: clamp(16px, 1.7vw, 19px);
   line-height: 1.65;
   color: var(--muted);
   max-width: 640px;
@@ -204,7 +204,7 @@ header nav a.active {
 .spec-grid {
   display: grid;
   grid-template-columns: minmax(130px, 200px) 1fr auto;
-  font: 400 13.5px var(--font-mono);
+  font: 400 14.5px var(--font-mono);
 }
 
 .spec-grid > div {
@@ -251,25 +251,25 @@ header nav a.active {
 }
 
 .ft-title {
-  font: 700 17px var(--font-title);
+  font: 700 18px var(--font-title);
   color: var(--fg);
   margin: 0;
 }
 
 .ft-date {
-  font: 400 11.5px var(--font-mono);
+  font: 400 12.5px var(--font-mono);
   color: var(--muted);
 }
 
 .ft-desc {
-  font: 400 14px/1.6 var(--font-body);
+  font: 400 15px/1.6 var(--font-body);
   color: var(--muted);
   margin: 6px 0 0;
   max-width: 560px;
 }
 
 .ft-metric {
-  font: 400 12.5px/1.8 var(--font-mono);
+  font: 400 13.5px/1.8 var(--font-mono);
   color: var(--accent);
   text-align: right;
 }
@@ -280,7 +280,7 @@ header nav a.active {
 
 .log-grid {
   border-bottom: 1px solid var(--line);
-  font: 400 13.5px var(--font-mono);
+  font: 400 14.5px var(--font-mono);
 }
 
 .log-row {
@@ -320,7 +320,7 @@ header nav a.active {
 
 .log-toggle {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .log-row > summary:hover .log-toggle {
@@ -347,7 +347,7 @@ header nav a.active {
 }
 
 .log-body li {
-  font: 400 13.5px/1.65 var(--font-body);
+  font: 400 14.5px/1.65 var(--font-body);
   color: var(--muted);
   margin-bottom: 7px;
   position: relative;
@@ -372,7 +372,7 @@ header nav a.active {
 }
 
 .log-tech span {
-  font: 400 11px var(--font-mono);
+  font: 400 12px var(--font-mono);
   color: var(--muted);
   border: 1px solid var(--line);
   padding: 4px 8px;
@@ -403,17 +403,17 @@ header nav a.active {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font: 400 11px var(--font-mono);
+  font: 400 12px var(--font-mono);
 }
 
 .side-title {
-  font: 700 17px var(--font-title);
+  font: 700 18px var(--font-title);
   color: var(--fg);
   margin: 0;
 }
 
 .side-desc {
-  font: 400 13.5px/1.6 var(--font-body);
+  font: 400 14.5px/1.6 var(--font-body);
   color: var(--muted);
   margin: 6px 0 0;
 }
@@ -428,7 +428,7 @@ header nav a.active {
 /* ---------- Buttons ---------- */
 
 .btn {
-  font: 500 12px var(--font-mono);
+  font: 500 13px var(--font-mono);
   color: var(--fg);
   border: 1px solid var(--line);
   padding: 9px 14px;
@@ -441,12 +441,12 @@ header nav a.active {
 }
 
 .btn-lg {
-  font-size: 12.5px;
+  font-size: 13.5px;
   padding: 11px 18px;
 }
 
 .btn-primary {
-  font: 500 12.5px var(--font-mono);
+  font: 500 13.5px var(--font-mono);
   background: var(--accent);
   color: var(--accent-fg);
   border: none;
@@ -473,7 +473,7 @@ header nav a.active {
 }
 
 .contact-title {
-  font-size: clamp(26px, 3.4vw, 38px);
+  font-size: clamp(28px, 3.6vw, 41px);
   line-height: 1.15;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -481,7 +481,7 @@ header nav a.active {
 }
 
 .contact-text {
-  font: 400 14.5px/1.6 var(--font-body);
+  font: 400 15.5px/1.6 var(--font-body);
   color: var(--muted);
   max-width: 460px;
   margin: 12px 0 0;
@@ -517,7 +517,7 @@ header nav a.active {
 }
 
 .barcode-label {
-  font: 400 11px var(--font-mono);
+  font: 400 12px var(--font-mono);
   color: var(--muted);
   letter-spacing: 0.28em;
 }
@@ -533,7 +533,7 @@ footer {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  font: 400 11.5px var(--font-mono);
+  font: 400 12.5px var(--font-mono);
   color: var(--muted);
 }
 
