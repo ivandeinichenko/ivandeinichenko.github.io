@@ -116,7 +116,7 @@ For more details, see [Build Setup Guide](docs/BUILD_SETUP.md).
 
 ## License
 
-© 2025 Ivan Deinichenko. All rights reserved.
+© 2025–2026 Ivan Deinichenko. All rights reserved.
 
 The source code of this website is available for viewing purposes only.
 No part of this project (including design, content, and code) may be

@@ -22,6 +22,7 @@
   },
   "homepage": "https://ivandeinichenko.github.io/",
   "author": "Ivan Deinichenko",
-  "license": "MIT"
+  "license": "UNLICENSED",
+  "private": true
 }
 
