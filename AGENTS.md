@@ -34,9 +34,9 @@ production-компонент — номер детали, таблица хар
   `// WORK LOG`, `// SIDE PROJECTS`, `// CONTACT`.
 - Таблицы: только горизонтальные hairline-разделители, без вертикальных линий
   и без зебры.
-- Моушн сдержанный и только на CSS: появление hero (`riseIn`), размерная линия
-  (`drawIn`), мигание статуса (`blink`). Ховер меняет только цвет рамки/текста.
-- Типографика: **Archivo Black** — только hero-фамилия и «Ready to deploy.»;
+- Моушн сдержанный и только на CSS: ступенчатое появление hero (`riseIn`) и мигание
+  статуса (`blink`). Ховер меняет только цвет рамки/текста.
+- Типографика: **Archivo Black** — только hero-имя и «Ready to deploy.»;
   **Archivo** — заголовки карточек; **IBM Plex Mono** — весь структурный текст;
   **Instrument Sans** — только описательные абзацы.
 - Голос: английский, терсно, через цифры («SEO 40→100», «6× LCP»), без
@@ -63,8 +63,8 @@ index.html            — вся разметка + <head> (SEO, canonical, OG/T
 css/
   themes.css          — цветовые токены; :root = тёмная тема, html[data-theme="light"]
   main.css            — layout и компоненты
-  animations.css      — keyframes (riseIn, drawIn, blink) + prefers-reduced-motion
-  responsive.css      — брейкпоинты (900px — шапка, 760px — контент) + print
+  animations.css      — keyframes (riseIn, blink) + prefers-reduced-motion
+  responsive.css      — единственный брейкпоинт 760px + print-стили
 js/
   theme-switcher.js   — состояние темы, системная тема, событие themechange
   main.js             — smooth-scroll, подсветка активного пункта меню

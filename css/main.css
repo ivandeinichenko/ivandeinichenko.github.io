@@ -76,7 +76,7 @@ a:hover {
 }
 
 .seclabel {
-  font: 400 13px var(--font-mono);
+  font: 400 17px var(--font-mono);
   color: var(--muted);
   margin-bottom: 12px;
 }
@@ -142,10 +142,6 @@ header nav a.active {
   white-space: nowrap;
 }
 
-.hdr-cv-short {
-  display: none;
-}
-
 #theme-toggle {
   font: 400 13px var(--font-mono);
   color: var(--fg);
@@ -166,10 +162,62 @@ header nav a.active {
   overflow: hidden;
 }
 
-.hero-label {
+/* Role on the left, meta on the right, a hairline stretching between them. */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 22px;
+}
+
+.hero-role {
+  font: 500 clamp(15px, 1.5vw, 20px) var(--font-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.hero-rule {
+  flex: 1;
+  border-top: 1px solid var(--line);
+}
+
+.hero-meta {
   font: 400 13px var(--font-mono);
   color: var(--muted);
-  padding-bottom: 18px;
+  white-space: nowrap;
+}
+
+/* Name and CV button share a row, aligned on the name's baseline edge. */
+.hero-namerow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 32px;
+}
+
+.hero-cv {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font: 500 15px var(--font-mono);
+  padding: 16px 22px;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  transition: opacity 0.25s;
+}
+
+.hero-cv:hover {
+  color: var(--accent-fg);
+  opacity: 0.9;
+}
+
+.hero-cv-arrow {
+  font-size: 18px;
 }
 
 .hero-name {
@@ -192,23 +240,6 @@ header nav a.active {
   color: var(--accent);
 }
 
-.dim-line {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 22px;
-}
-
-.dim-line .tick {
-  font: 400 12px var(--font-mono);
-  color: var(--accent);
-}
-
-.dim-line .dash {
-  flex: 1;
-  border-top: 1px dashed var(--line);
-}
-
 .hero-desc {
   font-size: clamp(16px, 1.7vw, 19px);
   line-height: 1.65;
@@ -227,7 +258,7 @@ header nav a.active {
 .spec-grid {
   display: grid;
   grid-template-columns: minmax(130px, 200px) 1fr auto;
-  font: 400 14.5px var(--font-mono);
+  font: 400 15px var(--font-mono);
 }
 
 .spec-grid > div {
@@ -481,13 +512,6 @@ header nav a.active {
 .btn-primary:hover {
   color: var(--accent-fg);
   opacity: 0.9;
-}
-
-/* Compact .btn-primary for the header. Must come after .btn-primary:
-   same specificity, so source order decides. */
-.hdr-cv {
-  font-size: 12.5px;
-  padding: 7px 13px;
 }
 
 /* ---------- Contact ---------- */

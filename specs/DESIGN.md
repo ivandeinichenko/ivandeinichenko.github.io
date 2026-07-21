@@ -14,9 +14,10 @@ Key metaphors (keep them consistent):
 - Header: `PART NO. ID-13` (ID = initials, 13 = years of experience) + `STATUS: ● AVAILABLE`
 - Sections are labeled like code comments: `// SPECIFICATIONS`, `// FIELD TESTS`, `// WORK LOG`,
   `// SIDE PROJECTS — OFF-DUTY OUTPUT`, `// CONTACT`
-- Hero: full name over two huge lines — `IVAN` in the accent colour above `DEINICHENKO` in `--fg` —
-  with a dashed "dimension line" underneath (`|← 13 YEARS IN PRODUCTION →|`)
-  like an engineering drawing measurement
+- Hero: an eyebrow row where a hairline stretches between the role and the spec meta
+  (`SENIOR FRONTEND ENGINEER ———— 13 YEARS IN PRODUCTION · SERBIA / REMOTE / B2B`), then the
+  full name over two huge lines — `IVAN` in the accent colour above `DEINICHENKO` in `--fg` —
+  with the CV button sitting on the surname's baseline to the right
 - Contact block: "Ready to deploy." + a decorative barcode (`ID-13 · SRB`)
 
 ## 2. Color tokens
@@ -62,7 +63,10 @@ Scale:
 | field-test descriptions | 15px/1.6 |
 | spec & log tables, card descriptions, log bullets | 14.5px |
 | field-test metrics, buttons, dates | 13.5px |
-| header, nav, section labels, hero kicker | 13px |
+| section labels (`// SPECIFICATIONS`) | 16px |
+| hero eyebrow role | `clamp(15px, 1.5vw, 20px)`, `letter-spacing: .18em` |
+| hero CV button | 15px |
+| header, nav, hero eyebrow meta | 13px |
 | tech tags, meta rows, barcode label, footer | 12px–12.5px |
 
 The floor of the hero clamp is **34px, not 44px**: the surname is set on one line
@@ -90,8 +94,7 @@ Voice: English, terse, metric-driven. Numbers over adjectives ("SEO 40→100", "
 ## 5. Motion
 
 Restrained; CSS-only:
-- Page load: hero elements stagger in with `riseIn` (fade + 22px translateY, .6s, delays .05–.55s).
-- Dimension line dashes scale in with `drawIn` (scaleX 0→1, transform-origin left/right).
+- Page load: hero elements stagger in with `riseIn` (fade + 22px translateY, .6s, delays .12–.55s).
 - Status dot `●` blinks (`blink` 2.2s infinite).
 - Hover: card/button border → accent; link color → accent. Nothing else moves.
 - All of the above is disabled under `prefers-reduced-motion: reduce`.
@@ -99,16 +102,16 @@ Restrained; CSS-only:
 
 ## 6. Content structure (in order)
 
-1. **Header** — part no., nav, status, `DOWNLOAD CV ↓` (accent button, duplicate of the
-   contact CTA), theme toggle `[light_mode]`/`[dark_mode]`.
+1. **Header** — part no., nav, status, theme toggle `[light_mode]`/`[dark_mode]`.
    The nav sits on the true centre of the viewport (equal `1fr` side columns, not
    `space-between` — the identity is far narrower than the right-hand group).
-   Below ~900px the row can no longer hold everything, so the header wraps and the nav
-   moves to its own row; below 760px the status also disappears, the part-number prefix
-   shortens to `ID-13` and the CV button to `CV ↓`
-2. **Hero** — mono kicker line (name, role, "PRODUCTION GRADE", location), `IVAN` (accent) over
-   `DEINICHENKO` (`--fg`) in Archivo Black,
-   dimension line, one descriptive paragraph
+   Below 760px the row can no longer hold everything: the status disappears, the header
+   wraps and the nav moves to its own row.
+   The header carries no CTA — the hero's CV button is the single primary action
+2. **Hero** — eyebrow row (role · hairline · spec meta), then `IVAN` (accent) over
+   `DEINICHENKO` (`--fg`) in Archivo Black with the `DOWNLOAD CV ↓` button beside it,
+   then one descriptive paragraph.
+   Below 760px the eyebrow wraps and loses its hairline, and the button moves under the name
 3. **// SPECIFICATIONS** — skills as a spec table with `✓` verdicts. NEVER use skill bars or percentages
 4. **// FIELD TESTS** — 3 featured engagements, each: title + dates, 1–2 sentence description,
    right-aligned accent metrics (2 lines)
@@ -144,6 +147,6 @@ The site is vanilla HTML/CSS/JS built with Vite (no framework, no runtime depend
   · `js/main.js` — smooth scroll, active nav · `js/analytics.js` — GA4 events.
 - `public/assets/` — favicon, CV PDF, og-image. Served from the site root.
 
-Responsive: the header breaks at 900px (grid → wrapped rows, nav on its own line);
-content breaks at 760px (status hidden, check/location columns dropped, field-test
-metrics move under text). Hero scales via `clamp()`.
+Responsive: single breakpoint at 760px — the header wraps and drops its status, the hero
+eyebrow wraps and loses its hairline, the CV button moves under the name, and the
+check/location columns and field-test metric alignment give way. Hero scales via `clamp()`.

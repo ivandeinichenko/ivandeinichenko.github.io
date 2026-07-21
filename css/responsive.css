@@ -1,13 +1,12 @@
 /* ==========================================
    RESPONSIVE + PRINT
-   Content breaks at 760px; the header needs to break earlier — see below.
+   Single breakpoint at 760px.
    ========================================== */
 
-/* Identity + nav + status + CV button + toggle need ~900px on one line.
-   Below that the header drops the desktop 3-column grid and wraps, with the
-   nav on its own row; otherwise the grid squeezes the nav column and the
-   links stack. The content breakpoint stays at 760px. */
-@media (max-width: 900px) {
+@media (max-width: 760px) {
+  /* The header can't fit identity + 5 nav items + status + toggle on one line,
+     so it drops the desktop 3-column grid and wraps: identity and toggle on
+     top, nav on its own row below. */
   header {
     display: flex;
     flex-wrap: wrap;
@@ -27,34 +26,36 @@
   header nav::-webkit-scrollbar {
     display: none;
   }
-}
 
-@media (max-width: 760px) {
   .hdr-status {
     display: none;
   }
 
-  /* Identity + CV + toggle have to share one narrow row, so the CV button
-     drops to its short label, the "PART NO." prefix goes, and gaps tighten.
-     Without this the row exceeds 320px and the header breaks into three. */
-  .hdr-partno {
+  /* The eyebrow's hairline needs room the narrow screen doesn't have, so the
+     role and meta simply stack and wrap. */
+  .hero-eyebrow {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .hero-rule {
     display: none;
   }
 
-  .hdr-right {
-    gap: 10px;
+  .hero-role,
+  .hero-meta {
+    white-space: normal;
   }
 
-  .hdr-cv {
-    padding: 6px 10px;
+  /* The CV button moves under the name instead of beside it. */
+  .hero-namerow {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .hdr-cv-full {
-    display: none;
-  }
-
-  .hdr-cv-short {
-    display: inline;
+  .hero-cv {
+    justify-self: start;
+    margin-bottom: 0;
   }
 
   .spec-grid {
@@ -94,7 +95,7 @@
 @media print {
   header,
   #theme-toggle,
-  .dim-line,
+  .hero-cv,
   .barcode,
   .contact-btns,
   .side-links,

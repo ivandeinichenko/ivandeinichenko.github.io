@@ -1,7 +1,7 @@
 /* ==========================================
    ANIMATIONS — see "Дизайн-система" in AGENTS.md
-   Restrained and CSS-only: hero stagger, dimension line,
-   blinking status dot. Nothing else moves.
+   Restrained and CSS-only: hero stagger and a blinking
+   status dot. Nothing else moves.
    ========================================== */
 
 @keyframes riseIn {
@@ -12,15 +12,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes drawIn {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
   }
 }
 
@@ -36,7 +27,7 @@
 }
 
 /* Hero stagger */
-.hero-label {
+.hero-eyebrow {
   animation: riseIn 0.6s ease both;
 }
 
@@ -44,20 +35,8 @@
   animation: riseIn 0.6s 0.12s ease both;
 }
 
-.dim-line {
-  animation: riseIn 0.6s 0.45s ease both;
-}
-
-.dim-line .dash {
-  animation: drawIn 1s 0.6s ease both;
-}
-
-.dim-line .dash.l {
-  transform-origin: left;
-}
-
-.dim-line .dash.r {
-  transform-origin: right;
+.hero-cv {
+  animation: riseIn 0.6s 0.3s ease both;
 }
 
 .hero-desc {
@@ -71,17 +50,12 @@
 /* Reduced motion: show everything in its final state, no movement.
    themes.css already clamps durations; this makes the intent explicit. */
 @media (prefers-reduced-motion: reduce) {
-  .hero-label,
+  .hero-eyebrow,
   .hero-name,
-  .dim-line,
+  .hero-cv,
   .hero-desc {
     animation: none;
     opacity: 1;
-    transform: none;
-  }
-
-  .dim-line .dash {
-    animation: none;
     transform: none;
   }
 
