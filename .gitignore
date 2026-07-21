@@ -43,6 +43,10 @@ dist/
 build/
 *.min.js
 *.min.css
+*.zip
+
+# Tooling scratch
+.playwright-mcp/
 
 # Cache
 .cache/

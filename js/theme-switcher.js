@@ -1,5 +1,8 @@
 /* ==========================================
    THEME SWITCHER - Dark/Light Mode
+   Dark is the default palette; light is applied
+   via data-theme="light" on <html>. The pre-paint anti-flash pass
+   lives inline in index.html — this module owns everything after it.
    ========================================== */
 
 import { logger } from './utils/logger.js';
@@ -11,6 +14,11 @@ import { logger } from './utils/logger.js';
   const THEME_DARK = 'dark';
   const THEME_LIGHT = 'light';
 
+  const META_COLOR = {
+    [THEME_DARK]: '#101114',
+    [THEME_LIGHT]: '#f2f0eb'
+  };
+
   class ThemeSwitcher {
     constructor() {
       this.currentTheme = null;
@@ -18,28 +26,17 @@ import { logger } from './utils/logger.js';
       this.init();
     }
 
-    /**
-     * Initialize theme switcher
-     */
     init() {
       this.toggleBtn = document.getElementById('theme-toggle');
-      this.toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 
-      if (!this.toggleBtn && !this.toggleBtnMobile) {
+      if (!this.toggleBtn) {
         logger.warn('Theme toggle button not found');
         return;
       }
 
       this.loadTheme();
 
-      if (this.toggleBtn) {
-        this.toggleBtn.addEventListener('click', () => this.toggleTheme());
-      }
-
-      if (this.toggleBtnMobile) {
-        this.toggleBtnMobile.addEventListener('click', () => this.toggleTheme());
-        this.updateToggleSwitchState();
-      }
+      this.toggleBtn.addEventListener('click', () => this.toggleTheme());
 
       this.watchSystemTheme();
 
@@ -47,35 +44,33 @@ import { logger } from './utils/logger.js';
     }
 
     /**
-     * Load theme from localStorage or system preference
+     * Resolve the initial theme: an explicit saved choice wins,
+     * otherwise follow the system preference. Never persisted here —
+     * only a real click writes to localStorage.
      */
     loadTheme() {
-      const savedTheme = localStorage.getItem(THEME_KEY);
+      let savedTheme = null;
 
-      if (savedTheme) {
-        this.setTheme(savedTheme);
+      try {
+        savedTheme = localStorage.getItem(THEME_KEY);
+      } catch {
+        logger.warn('localStorage unavailable, theme will not persist');
+      }
+
+      if (savedTheme === THEME_DARK || savedTheme === THEME_LIGHT) {
+        this.setTheme(savedTheme, false);
         return;
       }
 
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.setTheme(prefersDark ? THEME_DARK : THEME_LIGHT);
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      this.setTheme(prefersLight ? THEME_LIGHT : THEME_DARK, false);
     }
 
     /**
-     * Update toggle switch state
-     */
-    updateToggleSwitchState() {
-      if (this.toggleBtnMobile) {
-        const isDark = this.currentTheme === THEME_DARK;
-        this.toggleBtnMobile.setAttribute('aria-checked', isDark);
-      }
-    }
-
-    /**
-     * Set theme
      * @param {string} theme - 'dark' or 'light'
+     * @param {boolean} persist - whether to remember the choice
      */
-    setTheme(theme) {
+    setTheme(theme, persist = true) {
       if (theme !== THEME_DARK && theme !== THEME_LIGHT) {
         logger.warn('Invalid theme:', theme);
         return;
@@ -83,96 +78,87 @@ import { logger } from './utils/logger.js';
 
       this.currentTheme = theme;
 
-      if (theme === THEME_DARK) {
-        document.documentElement.setAttribute('data-theme', THEME_DARK);
+      if (theme === THEME_LIGHT) {
+        document.documentElement.setAttribute('data-theme', THEME_LIGHT);
       } else {
         document.documentElement.removeAttribute('data-theme');
       }
 
-      localStorage.setItem(THEME_KEY, theme);
+      if (persist) {
+        try {
+          localStorage.setItem(THEME_KEY, theme);
+        } catch {
+          /* non-fatal: the theme still applies for this page view */
+        }
+      }
 
       this.updateButtonState();
-      this.updateToggleSwitchState();
-
-      this.dispatchThemeChange(theme);
-
+      this.dispatchThemeChange(theme, persist);
       this.updateMetaThemeColor(theme);
     }
 
-    /**
-     * Toggle between dark and light theme
-     */
     toggleTheme() {
       const newTheme = this.currentTheme === THEME_DARK ? THEME_LIGHT : THEME_DARK;
-      this.setTheme(newTheme);
-      this.animateToggle();
+      this.setTheme(newTheme, true);
     }
 
     /**
-     * Update button visual state
+     * The label advertises the theme you would switch *to*.
      */
     updateButtonState() {
       if (!this.toggleBtn) {
         return;
       }
 
-      const label =
-        this.currentTheme === THEME_DARK ? 'Switch to light mode' : 'Switch to dark mode';
-      this.toggleBtn.setAttribute('aria-label', label);
-      this.toggleBtn.setAttribute('data-theme', this.currentTheme);
+      const isDark = this.currentTheme === THEME_DARK;
+
+      this.toggleBtn.textContent = isDark ? '[light_mode]' : '[dark_mode]';
+      this.toggleBtn.setAttribute(
+        'aria-label',
+        isDark ? 'Switch to light mode' : 'Switch to dark mode'
+      );
     }
 
-    /**
-     * Animate theme toggle button
-     */
-    animateToggle() {
-      if (!this.toggleBtn) {
-        return;
-      }
-
-      this.toggleBtn.style.transform = 'rotate(360deg)';
-      setTimeout(() => {
-        this.toggleBtn.style.transform = '';
-      }, 300);
-    }
-
-    /**
-     * Watch for system theme changes
-     */
     watchSystemTheme() {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+      const handler = e => {
+        let saved = null;
+
+        try {
+          saved = localStorage.getItem(THEME_KEY);
+        } catch {
+          /* treat as "no explicit choice" */
+        }
+
+        if (saved !== THEME_DARK && saved !== THEME_LIGHT) {
+          this.setTheme(e.matches ? THEME_LIGHT : THEME_DARK, false);
+        }
+      };
 
       if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener('change', e => {
-          if (!localStorage.getItem(THEME_KEY)) {
-            this.setTheme(e.matches ? THEME_DARK : THEME_LIGHT);
-          }
-        });
+        mediaQuery.addEventListener('change', handler);
       } else if (mediaQuery.addListener) {
-        mediaQuery.addListener(e => {
-          if (!localStorage.getItem(THEME_KEY)) {
-            this.setTheme(e.matches ? THEME_DARK : THEME_LIGHT);
-          }
-        });
+        mediaQuery.addListener(handler);
       }
     }
 
     /**
-     * Dispatch custom theme change event
+     * Consumed by js/analytics.js to report theme_toggle.
+     * `userInitiated` separates a real click from the initial resolution
+     * and from system-preference changes.
      * @param {string} theme
+     * @param {boolean} userInitiated
      */
-    dispatchThemeChange(theme) {
-      const event = new CustomEvent('themechange', {
-        detail: { theme },
-        bubbles: true
-      });
-      document.dispatchEvent(event);
+    dispatchThemeChange(theme, userInitiated) {
+      document.dispatchEvent(
+        new CustomEvent('themechange', {
+          detail: { theme, userInitiated },
+          bubbles: true
+        })
+      );
     }
 
-    /**
-     * Update meta theme-color for mobile browsers
-     * @param {string} theme
-     */
     updateMetaThemeColor(theme) {
       let metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -182,22 +168,13 @@ import { logger } from './utils/logger.js';
         document.head.appendChild(metaThemeColor);
       }
 
-      const color = theme === THEME_DARK ? '#0f172a' : '#f8fafc';
-      metaThemeColor.setAttribute('content', color);
+      metaThemeColor.setAttribute('content', META_COLOR[theme]);
     }
 
-    /**
-     * Get current theme
-     * @returns {string}
-     */
     getCurrentTheme() {
       return this.currentTheme;
     }
 
-    /**
-     * Check if dark mode is active
-     * @returns {boolean}
-     */
     isDarkMode() {
       return this.currentTheme === THEME_DARK;
     }
@@ -205,7 +182,7 @@ import { logger } from './utils/logger.js';
 
   function setupKeyboardShortcut(themeSwitcher) {
     document.addEventListener('keydown', e => {
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'D') {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'd') {
         e.preventDefault();
         themeSwitcher.toggleTheme();
       }
@@ -224,24 +201,7 @@ import { logger } from './utils/logger.js';
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       window.themeSwitcher = themeSwitcher;
     }
-
-    setTimeout(() => {
-      document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-    }, 100);
   }
 
   init();
-
-  (function preventThemeFlash() {
-    const savedTheme = localStorage.getItem(THEME_KEY);
-
-    if (savedTheme === THEME_DARK) {
-      document.documentElement.setAttribute('data-theme', THEME_DARK);
-    } else if (!savedTheme) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        document.documentElement.setAttribute('data-theme', THEME_DARK);
-      }
-    }
-  })();
 })();

@@ -3,39 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ivan Deinichenko | Senior Frontend Engineer</title>
+
   <meta name="description"
-        content="Ivan Deinichenko - Senior Frontend Engineer with 13+ years of experience in Vue/Nuxt, SSR, JavaScript and TypeScript. Specializing in frontend architecture, performance optimization, and SEO at scale.">
+        content="Ivan Deinichenko — Senior Frontend Engineer with 13+ years building and modernizing high-performance frontend systems with Vue/Nuxt, SSR, and strong architectural ownership.">
   <meta name="keywords"
-        content="Frontend Engineer, Vue.js, Nuxt.js, SSR, TypeScript, JavaScript, Frontend Architecture, Performance Optimization, SEO, Senior Frontend Engineer">
+        content="Frontend Engineer, Vue.js, Nuxt.js, SSR, TypeScript, JavaScript, Frontend Architecture, Performance Optimization, Core Web Vitals, SEO, Senior Frontend Engineer">
   <meta name="author" content="Ivan Deinichenko">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://ivandeinichenko.github.io/">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ivan Deinichenko - Senior Frontend Engineer">
+  <meta property="og:site_name" content="Ivan Deinichenko">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Ivan Deinichenko — Senior Frontend Engineer">
   <meta property="og:description"
-        content="Senior Frontend Engineer with 13+ years of experience specializing in Frontend Architecture, SSR, Performance Optimization, SEO, Vue, Nuxt, JavaScript and TypeScript applications">
+        content="Senior Frontend Engineer · 13+ years · Vue/Nuxt, TypeScript, SSR. Turning legacy codebases into fast, typed architectures.">
   <meta property="og:url" content="https://ivandeinichenko.github.io/">
+  <meta property="og:image" content="https://ivandeinichenko.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ID-13 — Ivan Deinichenko, Senior Frontend Engineer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ivan Deinichenko — Senior Frontend Engineer">
+  <meta name="twitter:description"
+        content="Senior Frontend Engineer · 13+ years · Vue/Nuxt, TypeScript, SSR. Turning legacy codebases into fast, typed architectures.">
+  <meta name="twitter:image" content="https://ivandeinichenko.github.io/assets/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
-  <title>Ivan Deinichenko | Senior Frontend Engineer</title>
+  <!-- Anti-flash: applies the stored/system theme before first paint.
+       Must stay inline and blocking — a deferred module runs too late. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('preferred-theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        if (t === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        /* localStorage unavailable — fall back to the dark default */
+      }
+    })();
+  </script>
 
   <!-- Google Fonts - Non-blocking async load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/themes.css">
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/responsive.css">
 
@@ -52,1029 +85,388 @@
 
     gtag('config', 'G-XL46YXYPDE');
   </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ivan Deinichenko",
+      "jobTitle": "Senior Frontend Engineer",
+      "description": "Senior Frontend Engineer with 13+ years building and modernizing high-performance frontend systems with Vue/Nuxt, SSR, and strong architectural ownership.",
+      "url": "https://ivandeinichenko.github.io/",
+      "image": "https://ivandeinichenko.github.io/assets/og-image.png",
+      "email": "mailto:ivan.deinichenko@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RS"
+      },
+      "knowsAbout": [
+        "Vue.js",
+        "Nuxt.js",
+        "TypeScript",
+        "JavaScript",
+        "Server-Side Rendering",
+        "Frontend Architecture",
+        "Feature-Sliced Design",
+        "Core Web Vitals",
+        "Performance Optimization",
+        "Structured Data (JSON-LD)",
+        "Design Systems",
+        "Storybook"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/ivan-deinichenko/",
+        "https://www.youtube.com/@ReactDeepDive",
+        "https://www.amazon.com/dp/B0GX36S9KF",
+        "https://ivandeinichenko.gumroad.com/l/owddbo",
+        "https://huecolor.app/",
+        "https://t.me/frostklaat"
+      ]
+    }
+  </script>
 </head>
 <body>
-<!-- Theme Toggle Button -->
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-  <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="5"></circle>
-    <line x1="12" y1="1" x2="12" y2="3"></line>
-    <line x1="12" y1="21" x2="12" y2="23"></line>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-    <line x1="1" y1="12" x2="3" y2="12"></line>
-    <line x1="21" y1="12" x2="23" y2="12"></line>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-  </svg>
-  <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-  </svg>
-</button>
 
-<!-- Navigation -->
-<nav class="nav glass-effect">
-  <div class="nav-container">
-    <a href="#" class="nav-logo">ID<span class="text-accent">.</span></a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-    <ul class="nav-menu">
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#achievements" class="nav-link">Achievements</a></li>
-      <li><a href="#resources" class="nav-link">Resources</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-      <li class="nav-menu-theme">
-        <div class="theme-toggle-wrapper">
-          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <button id="theme-toggle-mobile" class="theme-toggle-switch" aria-label="Toggle theme" role="switch"
-                  aria-checked="false">
-            <span class="toggle-slider"></span>
-          </button>
-          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-               stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </div>
-      </li>
-    </ul>
+<header>
+  <a href="#" class="muted">PART NO. <span class="accent">ID-13</span></a>
+  <nav>
+    <a href="#specs" class="nav-link">specs</a>
+    <a href="#work" class="nav-link">work</a>
+    <a href="#log" class="nav-link">log</a>
+    <a href="#side" class="nav-link">side</a>
+    <a href="#contact" class="nav-link">contact</a>
+  </nav>
+  <div class="hdr-right">
+    <span class="hdr-status">STATUS: <span class="accent"><span class="status-dot">●</span> AVAILABLE</span></span>
+    <button id="theme-toggle" aria-label="Toggle theme">[light_mode]</button>
   </div>
-</nav>
+</header>
 
-<!-- Hero Section -->
-<section id="hero" class="hero">
-  <canvas id="particles-canvas" class="particles-canvas"></canvas>
-  <div class="hero-content fade-in">
-    <div class="hero-badge glass-effect">
-      <span class="status-dot"></span>
-      Available for opportunities
-    </div>
-    <h1 class="hero-title">
-      Hi, I'm <span class="gradient-text">Ivan Deinichenko</span>
-    </h1>
-    <h2 class="hero-subtitle">Senior Frontend Engineer</h2>
-    <p class="hero-description">
-      Building and modernizing high-performance frontend systems with Vue/Nuxt, SSR, and strong architectural ownership.
-    </p>
-    <div class="hero-location">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-        <circle cx="12" cy="10" r="3"></circle>
-      </svg>
-      Serbia
-    </div>
-    <div class="hero-cta">
-      <a href="https://www.linkedin.com/in/ivan-deinichenko/" target="_blank" rel="noopener noreferrer"
-         class="btn btn-primary">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-        LinkedIn
-      </a>
-      <a href="mailto:ivan.deinichenko@gmail.com" class="btn btn-secondary">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        Email Me
-      </a>
-      <a href="/assets/pdf/CV_Ivan_Deinichenko_Senior_Frontend_Engineer.pdf?v=2" download class="btn btn-outline">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        Download CV
-      </a>
-    </div>
+<section class="hero">
+  <div class="hero-label pad-x">IVAN DEINICHENKO — SENIOR FRONTEND ENGINEER · PRODUCTION GRADE · SERBIA / REMOTE</div>
+  <h1 class="hero-name black pad-x">Deinichenko</h1>
+  <div class="dim-line pad-x">
+    <span class="tick">|←</span>
+    <span class="dash l"></span>
+    <span class="tick">13 YEARS IN PRODUCTION</span>
+    <span class="dash r"></span>
+    <span class="tick">→|</span>
   </div>
-  <div class="scroll-indicator">
-    <div class="scroll-mouse"></div>
+  <p class="hero-desc pad-x">I build and modernize high-performance frontend systems with <strong>Vue/Nuxt, SSR and
+    strong architectural ownership</strong> — turning legacy codebases into clean, fast TypeScript architectures with
+    measurable gains in performance, Core Web Vitals and SEO.</p>
+</section>
+
+<section id="specs" class="container">
+  <span id="about" class="anchor-alias" aria-hidden="true"></span>
+  <span id="skills" class="anchor-alias" aria-hidden="true"></span>
+  <h2 class="seclabel">// SPECIFICATIONS</h2>
+  <div class="spec-grid">
+    <div class="spec-key">core stack</div>
+    <div>Vue 2/3 · Nuxt 2/3/4 · TypeScript · Tailwind</div>
+    <div class="spec-check">✓ typed</div>
+
+    <div class="spec-key">rendering</div>
+    <div>SSR / SSG / Canvas / WebGL</div>
+    <div class="spec-check">✓ fast</div>
+
+    <div class="spec-key">also handles</div>
+    <div>JSON-LD SEO / WebSockets / Storybook / AI-assisted dev (Copilot, Codex CLI)</div>
+    <div class="spec-check">✓ shipped</div>
+
+    <div class="spec-key">max observed output</div>
+    <div>6× LCP · SEO 40→100 · 2000+ components refactored (career)</div>
+    <div class="spec-check">✓ verified</div>
+
+    <div class="spec-key">secondary gains</div>
+    <div>+15% organic traffic · −30% deploy errors · −70% setup time · −25% UI dev time · +10% conversion</div>
+    <div class="spec-check">✓ measured</div>
+
+    <div class="spec-key">operating range</div>
+    <div>social-network scale → enterprise web → gaming platforms</div>
+    <div class="spec-check">✓ proven</div>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="section about-section">
-  <div class="container">
-    <h2 class="section-title fade-in-up">About Me</h2>
-    <div class="about-content">
-      <div class="about-card glass-effect fade-in-up">
-        <p class="about-text">
-          <strong>Senior Frontend Engineer with 13+ years</strong> building, modernizing, and optimizing large-scale,
-          product-driven web applications.
-        </p>
-
-        <p class="about-text">
-          Specializes in turning legacy or messy codebases into <strong>clean, fast Vue/Nuxt + TypeScript SSR
-          architectures</strong> with measurable gains in <strong>performance, Core Web Vitals, and SEO</strong>.
-        </p>
-
-        <p class="about-text">
-          Has <strong>owned frontend architecture end-to-end</strong>, led and hired engineers, and delivered across
-          products ranging from high-traffic enterprise sites (tens of localizations) to consumer platforms operating at
-          <strong>social-network scale</strong>. Works autonomously, sets standards, and ships.
-        </p>
+<section id="work" class="container">
+  <span id="achievements" class="anchor-alias" aria-hidden="true"></span>
+  <h2 class="seclabel">// FIELD TESTS</h2>
+  <div class="cards">
+    <div class="ft-card">
+      <div>
+        <h3 class="ft-title">Confidential (NDA) — multi-tenant corporate portal <span
+          class="ft-date">&nbsp;2026→now</span></h3>
+        <p class="ft-desc">Large multi-tenant Vue 3 platform — one shared codebase, per-tenant configs and theming.
+          Quasar → Naive UI migration, Feature-Sliced Design refactor, in-portal admin with an ACL role system.</p>
       </div>
-
-      <div class="stats-grid">
-        <div class="stat-card glass-effect fade-in-up">
-          <div class="stat-number" data-target="13">0</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-card glass-effect fade-in-up">
-          <div class="stat-number" data-target="40">0</div>
-          <div class="stat-label">Projects Shipped</div>
-        </div>
-        <div class="stat-card glass-effect fade-in-up">
-          <div class="stat-number" data-target="3">0</div>
-          <div class="stat-label">x Lighthouse Performance</div>
-        </div>
-        <div class="stat-card glass-effect fade-in-up">
-          <div class="stat-number" data-target="100">0</div>
-          <div class="stat-label">SEO Score</div>
-        </div>
+      <div class="ft-metric">multi-tenant<br>Vue 3 + FSD</div>
+    </div>
+    <div class="ft-card">
+      <div>
+        <h3 class="ft-title">MaxDuel — Nuxt 4 SSR rewrite <span class="ft-date">&nbsp;2024–26</span></h3>
+        <p class="ft-desc">Took a slow, buggy Vue 2 platform (Lighthouse ~20), stabilized it under deadlines, then led a
+          full rewrite to Nuxt 4 + TypeScript + SSR: architecture, Storybook library, hired and led the team.</p>
       </div>
+      <div class="ft-metric">SEO 40→100<br>~3× Lighthouse</div>
+    </div>
+    <div class="ft-card">
+      <div>
+        <h3 class="ft-title">Acronis — enterprise web platform <span class="ft-date">&nbsp;2022–24</span></h3>
+        <p class="ft-desc">acronis.com (tens of languages, multi-thousand DAU): solo-built the JSON-LD structured-data
+          module, led the Drupal → Vue 3 migration of 5+ global sections with zero regressions.</p>
+      </div>
+      <div class="ft-metric">5+ sections<br>SEO 70→95+</div>
     </div>
   </div>
 </section>
 
-<!-- Skills Section -->
-<section id="skills" class="section skills-section">
-  <div class="container">
-    <h2 class="section-title fade-in-up">Core Skills</h2>
+<section id="log" class="container">
+  <span id="experience" class="anchor-alias" aria-hidden="true"></span>
+  <h2 class="seclabel">// WORK LOG — FULL HISTORY</h2>
+  <div class="log-grid">
 
-    <div class="skills-grid">
-      <div class="skill-category glass-effect fade-in-up">
-        <div class="category-header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-          <h3>Frontend Development</h3>
-        </div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <span class="skill-name">Vue 2/3 · Nuxt 2/3/4</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">JavaScript / TypeScript</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Composition API · Pinia</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Tailwind CSS · SCSS</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="95"></div>
-            </div>
-          </div>
+    <details class="log-row" data-ga-company="confidential-nda">
+      <summary>
+        <span class="log-date now">2026→now</span>
+        <span class="log-role">Senior Frontend Engineer — Confidential (NDA), multi-tenant e-commerce portal</span>
+        <span class="log-loc">Remote</span>
+        <span class="log-toggle"><span class="log-toggle-open">[+]</span><span class="log-toggle-close">[−]</span></span>
+      </summary>
+      <div class="log-body">
+        <ul>
+          <li>Migrating the shared platform from <strong>Quasar UI to Naive UI</strong> across its e-commerce and
+            content-management areas.
+          </li>
+          <li>Refactoring pages to <strong>Feature-Sliced Design</strong>, improving structure, reusability and
+            long-term maintainability.
+          </li>
+          <li>Built an in-portal admin with an <strong>ACL role system</strong> (admins, shop and content managers)
+            behind auth guards.
+          </li>
+        </ul>
+        <div class="log-tech">
+          <span>Vue 3</span><span>TypeScript</span><span>Pinia</span><span>Vue Router</span><span>VueUse</span><span>Tailwind CSS</span><span>Quasar → Naive UI</span><span>TipTap</span><span>Vite</span><span>dayjs</span><span>radash</span>
         </div>
       </div>
+    </details>
 
-      <div class="skill-category glass-effect fade-in-up">
-        <div class="category-header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
-          </svg>
-          <h3>Architecture & SSR</h3>
-        </div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <span class="skill-name">SSR / SSG / Custom SSR</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Feature-Sliced Design (FSD)</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="95"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Atomic Design · Design Systems</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="95"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Storybook · Component Libraries</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="90"></div>
-            </div>
-          </div>
+    <details class="log-row" data-ga-company="maxduel">
+      <summary>
+        <span class="log-date">2024–26</span>
+        <span class="log-role">Senior Frontend Engineer — MaxDuel, gaming platform</span>
+        <span class="log-loc">Remote</span>
+        <span class="log-toggle"><span class="log-toggle-open">[+]</span><span class="log-toggle-close">[−]</span></span>
+      </summary>
+      <div class="log-body">
+        <ul>
+          <li>Owned the new architecture end-to-end: reverse-engineered requirements from an undocumented codebase,
+            built a <strong>Storybook component library</strong> and ran a seamless cutover from the legacy app.
+          </li>
+          <li>Improved SEO score from <strong>40 → 100</strong> with major Core Web Vitals gains and
+            <strong>~3× Lighthouse Performance</strong>; homepage loading 4.25× faster authenticated, 3.4× faster guest.
+          </li>
+          <li><strong>Hired two senior engineers</strong> and led the distributed international team; built a docx
+            parser for legal T&amp;Cs that replaced a recurring half-day manual task.
+          </li>
+        </ul>
+        <div class="log-tech">
+          <span>Nuxt 4</span><span>Vue 2/3</span><span>TypeScript</span><span>SSR</span><span>Storybook</span><span>WebSockets</span><span>Tailwind CSS</span><span>Datadog</span><span>Figma</span>
         </div>
       </div>
+    </details>
 
-      <div class="skill-category glass-effect fade-in-up">
-        <div class="category-header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-          </svg>
-          <h3>Performance, SEO & Quality</h3>
-        </div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <span class="skill-name">Core Web Vitals · Lighthouse</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Structured Data (JSON-LD)</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="95"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Testing — Vitest / Playwright</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="85"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">CI/CD · Code Review</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="90"></div>
-            </div>
-          </div>
+    <details class="log-row" data-ga-company="acronis">
+      <summary>
+        <span class="log-date">2022–24</span>
+        <span class="log-role">Senior Frontend Engineer — Acronis, cybersecurity</span>
+        <span class="log-loc">Remote</span>
+        <span class="log-toggle"><span class="log-toggle-open">[+]</span><span class="log-toggle-close">[−]</span></span>
+      </summary>
+      <div class="log-body">
+        <ul>
+          <li>Solo-designed and built a <strong>structured-data (JSON-LD / schema.org) module</strong> — TypeScript
+            SchemaHandler classes rendered on SSR, fully configurable via the CMS with per-URL overrides.
+          </li>
+          <li>Led the <strong>Drupal → Vue 3 migration of 5+ global sections</strong>, rebuilt 1:1 with full test
+            coverage and no regressions.
+          </li>
+          <li>Improved the SEO index from <strong>~70 → 95+</strong>, integrated VWO A/B testing for self-serve
+            marketing experiments, and won an internal 100-day tech-debt challenge (100+ TODOs closed).
+          </li>
+        </ul>
+        <div class="log-tech">
+          <span>Vue 3</span><span>Custom SSR</span><span>TypeScript</span><span>JSON-LD / schema.org</span><span>In-house CMS</span><span>VWO</span><span>Storybook</span><span>CI/CD</span>
         </div>
       </div>
+    </details>
 
-      <div class="skill-category glass-effect fade-in-up">
-        <div class="category-header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-            <rect x="9" y="9" width="6" height="6"></rect>
-            <line x1="9" y1="1" x2="9" y2="4"></line>
-            <line x1="15" y1="1" x2="15" y2="4"></line>
-            <line x1="9" y1="20" x2="9" y2="23"></line>
-            <line x1="15" y1="20" x2="15" y2="23"></line>
-            <line x1="20" y1="9" x2="23" y2="9"></line>
-            <line x1="20" y1="14" x2="23" y2="14"></line>
-            <line x1="1" y1="9" x2="4" y2="9"></line>
-            <line x1="1" y1="14" x2="4" y2="14"></line>
-          </svg>
-          <h3>AI-Assisted Development</h3>
+    <details class="log-row" data-ga-company="noveo-carlili">
+      <summary>
+        <span class="log-date">2022</span>
+        <span class="log-role">Senior Frontend Engineer — Noveo (Carlili), car-rental platform</span>
+        <span class="log-loc">Remote</span>
+        <span class="log-toggle"><span class="log-toggle-open">[+]</span><span class="log-toggle-close">[−]</span></span>
+      </summary>
+      <div class="log-body">
+        <ul>
+          <li>Restructured the entire frontend to <strong>Atomic Design (200+ components refactored)</strong> and
+            migrated styling to Tailwind CSS — ~1.5× faster development.
+          </li>
+          <li>Rewrote broken <strong>JWT authentication</strong> (dropped sessions, faulty token expiry/refresh)
+            cleanly to best practices.
+          </li>
+          <li>Delivered major Core Web Vitals gains — asset compression, Cloudflare caching, code-splitting,
+            lazy-loading — and made the product production-ready.
+          </li>
+        </ul>
+        <div class="log-tech">
+          <span>Nuxt 2</span><span>Vue</span><span>SSR</span><span>TypeScript</span><span>Tailwind CSS</span><span>Atomic Design</span><span>JWT</span><span>Cloudflare</span>
         </div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <span class="skill-name">Claude Code</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Cursor</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="95"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">GitHub Copilot</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="90"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Codex CLI</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="85"></div>
-            </div>
-          </div>
+      </div>
+    </details>
+
+    <details class="log-row" data-ga-company="fotostrana">
+      <summary>
+        <span class="log-date">2017–22</span>
+        <span class="log-role">Senior Frontend Engineer, Games &amp; R&amp;D — Fotostrana, top-3/4 social network</span>
+        <span class="log-loc">St. Petersburg</span>
+        <span class="log-toggle"><span class="log-toggle-open">[+]</span><span class="log-toggle-close">[−]</span></span>
+      </summary>
+      <div class="log-body">
+        <ul>
+          <li>Ran a live game <strong>solo for a year</strong>, end-to-end: code, economy, content and KPIs; acted as
+            informal lead of a 5-developer team.
+          </li>
+          <li>Shipped <strong>10+ web and mobile titles</strong>, averaging ~800k–1M RUB/month in revenue.</li>
+          <li>Built administration SPAs and integrated payments, analytics, notifications, ads, localization and
+            social features.
+          </li>
+        </ul>
+        <div class="log-tech">
+          <span>JavaScript ES6+</span><span>Vue 2</span><span>HTML5 Canvas</span><span>Spine 2D</span><span>WebSockets</span><span>Unity 3D (C#)</span><span>Firebase</span><span>PHP</span><span>MySQL</span>
         </div>
+      </div>
+    </details>
+
+    <details class="log-row" data-ga-company="ast-222">
+      <summary>
+        <span class="log-date">2012–17</span>
+        <span class="log-role">Full Stack Engineer → Team Lead — AST 222, HTML5 game studio</span>
+        <span class="log-loc">Petrozavodsk</span>
+        <span class="log-toggle"><span class="log-toggle-open">[+]</span><span class="log-toggle-close">[−]</span></span>
+      </summary>
+      <div class="log-body">
+        <ul>
+          <li>Introduced <strong>version control, CI, Ansible-based auto-deployment and Agile</strong> from scratch;
+            led a team of ~10–15 for ~3 years.
+          </li>
+          <li>Built a boilerplate framework that cut project setup and deployment <strong>from weeks to
+            minutes</strong>.
+          </li>
+          <li>Shipped <strong>40+ projects</strong> and played a key role in a high-profile Flash → HTML5 migration for
+            a major industry client.
+          </li>
+        </ul>
+        <div class="log-tech">
+          <span>JavaScript ES6+</span><span>HTML5 Canvas</span><span>Phaser</span><span>PHP (Yii)</span><span>MySQL</span><span>WebSockets</span><span>Ansible</span><span>CI</span><span>Git</span>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section id="side" class="container">
+  <span id="resources" class="anchor-alias" aria-hidden="true"></span>
+  <h2 class="seclabel">// SIDE PROJECTS — OFF-DUTY OUTPUT</h2>
+  <div class="side-grid">
+    <div class="side-card">
+      <div class="side-meta"><span class="accent">TYPE: BOOK</span><span class="muted">70+ Q&amp;A</span></div>
+      <div>
+        <h3 class="side-title">React Deep Dive</h3>
+        <p class="side-desc">A practical deep dive into React's internals — with 70+ interview questions for mid and
+          senior engineers.</p>
+      </div>
+      <div class="side-links">
+        <a class="btn" href="https://www.amazon.com/dp/B0GX36S9KF" target="_blank" rel="noopener noreferrer"
+           data-ga-event="outbound_click" data-ga-project="book" data-ga-store="amazon">AMAZON ↗</a>
+        <a class="btn" href="https://ivandeinichenko.gumroad.com/l/owddbo" target="_blank" rel="noopener noreferrer"
+           data-ga-event="outbound_click" data-ga-project="book" data-ga-store="gumroad">GUMROAD ↗</a>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-meta"><span class="accent">TYPE: CHANNEL</span><span class="muted">VIDEO</span></div>
+      <div>
+        <h3 class="side-title">React Deep Dive — YouTube</h3>
+        <p class="side-desc">Rendering, reconciliation, Fiber, concurrent features — one concept at a time, explained
+          for interviews.</p>
+      </div>
+      <div class="side-links">
+        <a class="btn" href="https://www.youtube.com/@ReactDeepDive" target="_blank" rel="noopener noreferrer"
+           data-ga-event="outbound_click" data-ga-project="channel">YOUTUBE ↗</a>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-meta"><span class="accent">TYPE: APP</span><span class="muted">iOS</span></div>
+      <div>
+        <h3 class="side-title">Hue — Color Identifier</h3>
+        <p class="side-desc">Point your camera at any color: HSL, wavelength, names, colorblind-vision simulations. The
+          science of color, in your pocket.</p>
+      </div>
+      <div class="side-links">
+        <a class="btn" href="https://huecolor.app/" target="_blank" rel="noopener noreferrer"
+           data-ga-event="outbound_click" data-ga-project="app">HUECOLOR.APP ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Experience Section -->
-<section id="experience" class="section experience-section">
-  <div class="container">
-    <h2 class="section-title fade-in-up">Professional Experience</h2>
-
-    <div class="timeline">
-      <!-- Confidential (NDA) -->
-      <div class="timeline-item fade-in-up">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content glass-effect">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Senior Frontend Engineer</h3>
-              <p class="timeline-company">Confidential (NDA) — Multi-tenant E-commerce / Corporate Portal</p>
-            </div>
-            <div class="timeline-meta">
-              <span class="timeline-location">Remote</span>
-              <span class="timeline-date">Mar 2026 — Present</span>
-            </div>
-          </div>
-          <p class="timeline-description">
-            Senior Frontend Engineer on a <strong>large multi-tenant Vue 3 corporate-portal platform</strong> — a single
-            shared codebase distributed to multiple companies within the holding, with per-tenant configs and theming.
-          </p>
-
-          <p>Tech stack:</p>
-          <div class="timeline-tech">
-            <span class="tech-tag">Vue 3</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Pinia</span>
-            <span class="tech-tag">Vue Router</span>
-            <span class="tech-tag">VueUse</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Quasar → Naive UI</span>
-            <span class="tech-tag">TipTap</span>
-            <span class="tech-tag">Vite</span>
-            <span class="tech-tag">dayjs</span>
-            <span class="tech-tag">radash</span>
-          </div>
-
-          <p>Key contributions & impact:</p>
-          <ul class="timeline-achievements">
-            <li>
-              Migrating the shared platform from <strong>Quasar UI to Naive UI</strong> across its e-commerce and
-              content-management areas
-            </li>
-            <li>
-              Refactoring pages to <strong>Feature-Sliced Design (FSD)</strong>, improving structure, reusability, and
-              long-term maintainability
-            </li>
-            <li>
-              Building an in-portal admin with an <strong>ACL role system</strong> (admins, shop and content managers)
-              behind auth guards
-            </li>
-            <li>
-              Running thorough per-page <strong>code review (manual + AI-assisted)</strong> and self-review to keep
-              quality consistently high
-            </li>
-          </ul>
-        </div>
+<section id="contact" class="container">
+  <h2 class="seclabel">// CONTACT</h2>
+  <div class="contact-box">
+    <div>
+      <p class="contact-title black">Ready to deploy<span class="accent">.</span></p>
+      <p class="contact-text">Open to new opportunities, interesting projects — or just a chat about making things
+        fast.</p>
+      <div class="contact-btns">
+        <a class="btn-primary" href="/assets/pdf/CV_Ivan_Deinichenko_Senior_Frontend_Engineer.pdf?v=2" download
+           data-ga-event="cv_download" data-ga-location="contact">CV.PDF ↓</a>
+        <a class="btn btn-lg" href="https://www.linkedin.com/in/ivan-deinichenko/" target="_blank"
+           rel="noopener noreferrer" data-ga-event="contact_click" data-ga-method="linkedin"
+           data-ga-location="contact">LINKEDIN ↗</a>
+        <a class="btn btn-lg" href="https://t.me/frostklaat" target="_blank" rel="noopener noreferrer"
+           data-ga-event="contact_click" data-ga-method="telegram" data-ga-location="contact">TELEGRAM ↗</a>
+        <a class="btn btn-lg" href="mailto:ivan.deinichenko@gmail.com" data-ga-event="contact_click"
+           data-ga-method="email" data-ga-location="contact">MAIL ↗</a>
       </div>
-
-      <!-- MaxDuel -->
-      <div class="timeline-item fade-in-up">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content glass-effect">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Senior Frontend Engineer</h3>
-              <p class="timeline-company">MaxDuel — Gaming Platform</p>
-            </div>
-            <div class="timeline-meta">
-              <span class="timeline-location">Remote</span>
-              <span class="timeline-date">Nov 2024 — Mar 2026</span>
-            </div>
-          </div>
-          <p class="timeline-description">
-            Took over a <strong>slow, buggy Vue 2 platform (Lighthouse ~20)</strong>, stabilized and shipped it under
-            burning deadlines, then led a <strong>full rewrite to Nuxt 4 + TypeScript + SSR</strong>.
-          </p>
-
-          <p>Tech stack:</p>
-          <div class="timeline-tech">
-            <span class="tech-tag">Nuxt 4</span>
-            <span class="tech-tag">Vue 2/3</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">SSR</span>
-            <span class="tech-tag">Storybook</span>
-            <span class="tech-tag">WebSockets</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Datadog</span>
-            <span class="tech-tag">Figma</span>
-          </div>
-
-          <p>Key contributions & impact:</p>
-          <ul class="timeline-achievements">
-            <li>
-              Owned the new architecture end-to-end: <strong>reverse-engineered requirements</strong> from an
-              undocumented codebase, designed the architecture, built a <strong>Storybook component library</strong>, and
-              ran a seamless cutover from the legacy app
-            </li>
-            <li>
-              <strong>Hired two senior engineers</strong> and led the distributed, international team
-            </li>
-            <li>
-              Built runtime automation (a <strong>docx parser for legal Terms &amp; Conditions</strong>) that replaced a
-              recurring half-day manual task with an always-current automated flow
-            </li>
-            <li>
-              Improved <strong>SEO score from 40 → 100</strong> with major Core Web Vitals gains (LCP, CLS) and
-              <strong>~3× Lighthouse Performance</strong>
-            </li>
-            <li>
-              Refactored homepage loading — <strong>4.25× faster authenticated</strong> and <strong>3.4× faster
-              guest</strong> — and delivered <strong>~2× faster feature delivery</strong> with strong mobile/tablet
-              support
-            </li>
-          </ul>
-        </div>
+    </div>
+    <div class="barcode" aria-hidden="true">
+      <div class="bars">
+        <span style="width:3px"></span><span style="width:2px"></span><span style="width:6px"></span><span class="a"
+                                                                                                          style="width:2px"></span><span
+        style="width:3px"></span><span style="width:7px"></span><span style="width:2px"></span><span
+        style="width:4px"></span><span style="width:2px"></span><span style="width:5px"></span>
       </div>
-
-      <!-- Acronis -->
-      <div class="timeline-item fade-in-up">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content glass-effect">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Senior Frontend Engineer</h3>
-              <p class="timeline-company">Acronis — Cybersecurity Product Company</p>
-            </div>
-            <div class="timeline-meta">
-              <span class="timeline-location">Remote</span>
-              <span class="timeline-date">Nov 2022 — Oct 2024</span>
-            </div>
-          </div>
-          <p class="timeline-description">
-            Worked on <strong>acronis.com</strong> — an enterprise platform (shop, blog, knowledge base; tens of
-            languages; multi-thousand DAU) on <strong>Vue 3 + custom SSR</strong> with an in-house CMS.
-          </p>
-
-          <p>Tech stack:</p>
-          <div class="timeline-tech">
-            <span class="tech-tag">Vue 3</span>
-            <span class="tech-tag">Custom SSR</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">JSON-LD / schema.org</span>
-            <span class="tech-tag">In-house CMS</span>
-            <span class="tech-tag">VWO</span>
-            <span class="tech-tag">Storybook</span>
-            <span class="tech-tag">Git</span>
-            <span class="tech-tag">CI/CD</span>
-          </div>
-
-          <p>Key contributions & impact:</p>
-          <ul class="timeline-achievements">
-            <li>
-              Solo-designed and built a <strong>structured-data (JSON-LD / schema.org) module</strong> — TypeScript
-              SchemaHandler classes rendered on SSR, fully configurable via the CMS (global defaults, page groups, and
-              per-URL overrides across many schema types)
-            </li>
-            <li>
-              Led <strong>Drupal → Vue 3 migration of 5+ global site sections</strong>, rebuilt 1:1 with full test
-              coverage and no regressions
-            </li>
-            <li>
-              Integrated <strong>VWO A/B testing</strong> and enabled marketing to run experiments self-serve; built the
-              <strong>Resource Center and TRU blog</strong> from scratch; contributed to the in-house UI library + Storybook
-            </li>
-            <li>
-              Improved the <strong>SEO index from ~70 → 95+</strong> and won an internal 100-day tech-debt challenge
-              (<strong>100+ TODOs closed</strong> — top by a wide margin)
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Noveo -->
-      <div class="timeline-item fade-in-up">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content glass-effect">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Senior Frontend Engineer</h3>
-              <p class="timeline-company">Noveo (Carlili) — French Car-Rental Platform</p>
-            </div>
-            <div class="timeline-meta">
-              <span class="timeline-location">Remote</span>
-              <span class="timeline-date">Feb 2022 — Nov 2022</span>
-            </div>
-          </div>
-          <p class="timeline-description">
-            Lead frontend on <strong>Carlili (carlili.fr)</strong>, a French car-rental platform on
-            <strong>Nuxt 2 + SSR</strong> (EN/FR); inherited a weak codebase and rebuilt its architecture.
-          </p>
-
-          <p>Tech stack:</p>
-          <div class="timeline-tech">
-            <span class="tech-tag">Nuxt 2</span>
-            <span class="tech-tag">Vue</span>
-            <span class="tech-tag">SSR</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Atomic Design</span>
-            <span class="tech-tag">JWT</span>
-            <span class="tech-tag">Cloudflare</span>
-            <span class="tech-tag">Git</span>
-          </div>
-
-          <p>Key contributions & impact:</p>
-          <ul class="timeline-achievements">
-            <li>
-              Restructured the entire frontend to <strong>Atomic Design (refactoring 200+ components)</strong> and
-              migrated styling to Tailwind CSS, improving development speed (~1.5×) and developer experience
-            </li>
-            <li>
-              <strong>Rewrote broken JWT authentication</strong> (dropped sessions, faulty token expiry/refresh) cleanly
-              to best practices
-            </li>
-            <li>
-              Delivered major <strong>Core Web Vitals / Lighthouse improvements</strong> (asset compression, Cloudflare
-              caching, code-splitting, lazy-loading, removing render-blockers) and made the product production-ready
-            </li>
-            <li>
-              Fixed Noveo's <strong>internal Vue 3 UI component library</strong>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Fotostrana -->
-      <div class="timeline-item fade-in-up">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content glass-effect">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Senior Frontend Engineer — Games &amp; R&amp;D</h3>
-              <p class="timeline-company">Fotostrana — Top-3/4 Social Network</p>
-            </div>
-            <div class="timeline-meta">
-              <span class="timeline-location">St. Petersburg, Russia</span>
-              <span class="timeline-date">2017 — 2022</span>
-            </div>
-          </div>
-          <p class="timeline-description">
-            Frontend and lead roles across the games and R&amp;D departments of a <strong>top-3/4 Russian social network
-            (millions of DAU)</strong>; began building with <strong>Vue 2 from ~2019</strong>.
-          </p>
-
-          <p>Tech stack:</p>
-          <div class="timeline-tech">
-            <span class="tech-tag">JavaScript ES6+</span>
-            <span class="tech-tag">Vue 2</span>
-            <span class="tech-tag">HTML5 Canvas</span>
-            <span class="tech-tag">Spine 2D</span>
-            <span class="tech-tag">WebSockets</span>
-            <span class="tech-tag">Unity 3D (C#)</span>
-            <span class="tech-tag">Firebase</span>
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">MySQL</span>
-          </div>
-
-          <p>Key contributions & impact:</p>
-          <ul class="timeline-achievements">
-            <li>
-              Ran a <strong>live game solo for a year</strong>, end-to-end (code, economy, content, KPIs)
-            </li>
-            <li>
-              Acted as <strong>informal lead of a 5-developer team</strong>
-            </li>
-            <li>
-              Shipped <strong>10+ web and mobile titles</strong>, with projects averaging <strong>~800k–1M RUB/month in
-              revenue</strong>
-            </li>
-            <li>
-              Built administration SPAs and integrated <strong>payments, analytics, notifications, ads, localization, and
-              social features</strong>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- AST 222 -->
-      <div class="timeline-item fade-in-up">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content glass-effect">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Full Stack Engineer → Team Lead</h3>
-              <p class="timeline-company">AST 222 — HTML5 Game Studio</p>
-            </div>
-            <div class="timeline-meta">
-              <span class="timeline-location">Petrozavodsk, Russia</span>
-              <span class="timeline-date">2012 — 2017</span>
-            </div>
-          </div>
-          <p class="timeline-description">
-            HTML5 game studio for major social networks. Grew from full-stack engineer to <strong>team lead (~10–15
-            people) for ~3 years</strong>, driving early technical leadership and process modernization.
-          </p>
-
-          <p>Tech stack:</p>
-          <div class="timeline-tech">
-            <span class="tech-tag">JavaScript ES6+</span>
-            <span class="tech-tag">HTML5 Canvas</span>
-            <span class="tech-tag">Phaser</span>
-            <span class="tech-tag">PHP (Yii)</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">WebSockets</span>
-            <span class="tech-tag">Ansible</span>
-            <span class="tech-tag">CI</span>
-            <span class="tech-tag">Git</span>
-          </div>
-
-          <p>Key contributions & impact:</p>
-          <ul class="timeline-achievements">
-            <li>
-              Introduced <strong>version control, CI, Ansible-based auto-deployment, and Agile</strong> from scratch
-            </li>
-            <li>
-              Built a <strong>boilerplate framework</strong> that cut project setup and deployment from weeks to minutes
-            </li>
-            <li>
-              Shipped <strong>40+ projects</strong>, leading team coordination (sprints, stand-ups)
-            </li>
-            <li>
-              Played a key role in a <strong>high-profile Flash → HTML5 migration</strong> for a major industry client
-            </li>
-          </ul>
-        </div>
-      </div>
+      <span class="barcode-label">ID-13 · SRB</span>
     </div>
   </div>
 </section>
 
-<!-- Key Achievements Section -->
-<section id="achievements" class="section achievements-section">
-  <div class="container">
-    <h2 class="section-title fade-in-up">Key Achievements</h2>
-
-    <div class="achievements-grid">
-      <div class="achievement-card glass-effect fade-in-up glow-on-hover">
-        <div class="achievement-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-          </svg>
-        </div>
-        <h3 class="achievement-title">Performance Optimization</h3>
-        <div class="achievement-metrics">
-          <div class="metric">
-            <span class="metric-number">6x</span>
-            <span class="metric-label">LCP Reduction</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">3x</span>
-            <span class="metric-label">Performance Score</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="achievement-card glass-effect fade-in-up glow-on-hover">
-        <div class="achievement-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </div>
-        <h3 class="achievement-title">SEO Excellence</h3>
-        <div class="achievement-metrics">
-          <div class="metric">
-            <span class="metric-number">40→100</span>
-            <span class="metric-label">SEO Score</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">+15%</span>
-            <span class="metric-label">Organic Traffic</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="achievement-card glass-effect fade-in-up glow-on-hover">
-        <div class="achievement-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-          </svg>
-        </div>
-        <h3 class="achievement-title">Large-Scale Migrations</h3>
-        <div class="achievement-metrics">
-          <div class="metric">
-            <span class="metric-number">5+</span>
-            <span class="metric-label">Drupal → Vue.js</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">40%</span>
-            <span class="metric-label">Scalability Boost</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="achievement-card glass-effect fade-in-up glow-on-hover">
-        <div class="achievement-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-          </svg>
-        </div>
-        <h3 class="achievement-title">Legacy Refactoring</h3>
-        <div class="achievement-metrics">
-          <div class="metric">
-            <span class="metric-number">2000+</span>
-            <span class="metric-label">Components Refactored (career)</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">-30%</span>
-            <span class="metric-label">Deployment Errors</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="achievement-card glass-effect fade-in-up glow-on-hover">
-        <div class="achievement-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-        </div>
-        <h3 class="achievement-title">Process Improvements</h3>
-        <div class="achievement-metrics">
-          <div class="metric">
-            <span class="metric-number">-70%</span>
-            <span class="metric-label">Setup Time</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">100%</span>
-            <span class="metric-label">KPIs Met</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="achievement-card glass-effect fade-in-up glow-on-hover">
-        <div class="achievement-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-        </div>
-        <h3 class="achievement-title">UI Development Speed</h3>
-        <div class="achievement-metrics">
-          <div class="metric">
-            <span class="metric-number">-25%</span>
-            <span class="metric-label">Development Time</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">+10%</span>
-            <span class="metric-label">Conversion Rate</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Resources Section -->
-<section id="resources" class="section resources-section">
-  <div class="container">
-    <h2 class="section-title fade-in-up">Featured Resources</h2>
-
-    <div class="resources-grid">
-      <!-- Book (Amazon + Gumroad) -->
-      <div class="resource-card glass-effect fade-in-up glow-on-hover">
-        <div class="resource-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          </svg>
-        </div>
-        <h3 class="resource-title">React Deep Dive – Book</h3>
-        <p class="resource-description">
-          A practical deep dive into React's internals — with 70+ interview questions for mid and
-          senior engineers, and clear, confident ways to explain how React really works.
-        </p>
-        <div class="resource-actions" style="display: grid; grid-template-columns: repeat(2, 1fr);">
-          <a
-            href="https://www.amazon.com/dp/B0GX36S9KF" target="_blank" rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Amazon
-          </a>
-          <a
-            href="https://ivandeinichenko.gumroad.com/l/owddbo" target="_blank" rel="noopener noreferrer"
-            class="btn btn-outline"
-          >
-            Gumroad
-          </a>
-        </div>
-      </div>
-
-      <!-- YouTube channel -->
-      <div class="resource-card glass-effect fade-in-up glow-on-hover">
-        <div class="resource-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-          </svg>
-        </div>
-        <h3 class="resource-title">React Deep Dive – YouTube Channel</h3>
-        <p class="resource-description">
-          Understand how React actually works — rendering, reconciliation, Fiber architecture, and
-          concurrent features — broken down one concept at a time, so you can explain them clearly
-          in technical interviews.
-        </p>
-        <div class="resource-actions">
-          <a href="https://www.youtube.com/@ReactDeepDive" target="_blank" rel="noopener noreferrer"
-             class="btn btn-primary">Watch on YouTube</a>
-        </div>
-      </div>
-
-      <!-- Hue app -->
-      <div class="resource-card glass-effect fade-in-up glow-on-hover">
-        <div class="resource-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-          </svg>
-        </div>
-        <h3 class="resource-title">Hue – Color Identifier</h3>
-        <p class="resource-subtitle">The science of color, in your pocket</p>
-        <p class="resource-description">
-          A color-reading app that uses your camera to identify any color and break it down —
-          HSL, wavelength, color names, and colorblind-vision simulations. Built for designers,
-          artists, and the color-curious.
-        </p>
-        <div class="resource-actions">
-          <a href="https://huecolor.app/" target="_blank" rel="noopener noreferrer"
-             class="btn btn-primary">Get the App</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="section contact-section">
-  <div class="container">
-    <h2 class="section-title fade-in-up">Let's Connect</h2>
-
-    <div class="contact-content">
-      <div class="contact-card glass-effect fade-in-up">
-        <p class="contact-text">
-          I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
-        </p>
-
-        <div class="contact-methods">
-          <a href="mailto:ivan.deinichenko@gmail.com" class="contact-method">
-            <div class="method-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve">
-                <g
-                  style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                  <path
-                    d="M 75.546 78.738 H 14.455 C 6.484 78.738 0 72.254 0 64.283 V 25.716 c 0 -7.97 6.485 -14.455 14.455 -14.455 h 61.091 c 7.97 0 14.454 6.485 14.454 14.455 v 38.567 C 90 72.254 83.516 78.738 75.546 78.738 z M 14.455 15.488 c -5.64 0 -10.228 4.588 -10.228 10.228 v 38.567 c 0 5.64 4.588 10.229 10.228 10.229 h 61.091 c 5.64 0 10.228 -4.589 10.228 -10.229 V 25.716 c 0 -5.64 -4.588 -10.228 -10.228 -10.228 H 14.455 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 11.044 25.917 C 21.848 36.445 32.652 46.972 43.456 57.5 c 2.014 1.962 5.105 -1.122 3.088 -3.088 C 35.74 43.885 24.936 33.357 14.132 22.83 C 12.118 20.867 9.027 23.952 11.044 25.917 L 11.044 25.917 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 46.544 57.5 c 10.804 -10.527 21.608 -21.055 32.412 -31.582 c 2.016 -1.965 -1.073 -5.051 -3.088 -3.088 C 65.064 33.357 54.26 43.885 43.456 54.412 C 41.44 56.377 44.529 59.463 46.544 57.5 L 46.544 57.5 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 78.837 64.952 c -7.189 -6.818 -14.379 -13.635 -21.568 -20.453 c -2.039 -1.933 -5.132 1.149 -3.088 3.088 c 7.189 6.818 14.379 13.635 21.568 20.453 C 77.788 69.973 80.881 66.89 78.837 64.952 L 78.837 64.952 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 14.446 68.039 c 7.189 -6.818 14.379 -13.635 21.568 -20.453 c 2.043 -1.938 -1.048 -5.022 -3.088 -3.088 c -7.189 6.818 -14.379 13.635 -21.568 20.453 C 9.315 66.889 12.406 69.974 14.446 68.039 L 14.446 68.039 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                </g>
-              </svg>
-            </div>
-            <div class="method-info">
-              <div class="method-label">Email me</div>
-              <div class="method-value">at gmail.com</div>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/ivan-deinichenko/" target="_blank" rel="noopener noreferrer"
-             class="contact-method">
-            <div class="method-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </div>
-            <div class="method-info">
-              <div class="method-label">LinkedIn</div>
-              <div class="method-value">Ivan Deinichenko</div>
-            </div>
-          </a>
-
-          <a href="https://t.me/frostklaat" target="_blank" rel="noopener noreferrer" class="contact-method">
-            <div class="method-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">
-                <path
-                  d="M 25.154297 3.984375 C 24.829241 3.998716 24.526384 4.0933979 24.259766 4.2011719 C 24.010014 4.3016357 23.055766 4.7109106 21.552734 5.3554688 C 20.048394 6.0005882 18.056479 6.855779 15.931641 7.7695312 C 11.681964 9.5970359 6.9042108 11.654169 4.4570312 12.707031 C 4.3650097 12.746607 4.0439208 12.849183 3.703125 13.115234 C 3.3623292 13.381286 3 13.932585 3 14.546875 C 3 15.042215 3.2360676 15.534319 3.5332031 15.828125 C 3.8303386 16.121931 4.144747 16.267067 4.4140625 16.376953 C 5.3912284 16.775666 8.4218473 18.015862 8.9941406 18.25 C 9.195546 18.866983 10.29249 22.222526 10.546875 23.044922 C 10.714568 23.587626 10.874198 23.927519 11.082031 24.197266 C 11.185948 24.332139 11.306743 24.45034 11.453125 24.542969 C 11.511635 24.579989 11.575789 24.608506 11.640625 24.634766 L 11.644531 24.636719 C 11.659471 24.642719 11.67235 24.652903 11.6875 24.658203 C 11.716082 24.668202 11.735202 24.669403 11.773438 24.677734 C 11.925762 24.726927 12.079549 24.757812 12.216797 24.757812 C 12.80196 24.757814 13.160156 24.435547 13.160156 24.435547 L 13.181641 24.419922 L 16.191406 21.816406 L 19.841797 25.269531 C 19.893193 25.342209 20.372542 26 21.429688 26 C 22.057386 26 22.555319 25.685026 22.875 25.349609 C 23.194681 25.014192 23.393848 24.661807 23.478516 24.21875 L 23.478516 24.216797 C 23.557706 23.798129 26.921875 6.5273437 26.921875 6.5273438 L 26.916016 6.5507812 C 27.014496 6.1012683 27.040303 5.6826405 26.931641 5.2695312 C 26.822973 4.8564222 26.536648 4.4608905 26.181641 4.2480469 C 25.826669 4.0352506 25.479353 3.9700339 25.154297 3.984375 z M 24.966797 6.0742188 C 24.961997 6.1034038 24.970391 6.0887279 24.962891 6.1230469 L 24.960938 6.1347656 L 24.958984 6.1464844 C 24.958984 6.1464844 21.636486 23.196371 21.513672 23.845703 C 21.522658 23.796665 21.481573 23.894167 21.439453 23.953125 C 21.379901 23.91208 21.257812 23.859375 21.257812 23.859375 L 21.238281 23.837891 L 16.251953 19.121094 L 12.726562 22.167969 L 13.775391 17.96875 C 13.775391 17.96875 20.331562 11.182109 20.726562 10.787109 C 21.044563 10.471109 21.111328 10.360953 21.111328 10.251953 C 21.111328 10.105953 21.035234 10 20.865234 10 C 20.712234 10 20.506484 10.14875 20.396484 10.21875 C 18.963383 11.132295 12.671823 14.799141 9.8515625 16.439453 C 9.4033769 16.256034 6.2896636 14.981472 5.234375 14.550781 C 5.242365 14.547281 5.2397349 14.548522 5.2480469 14.544922 C 7.6958673 13.491784 12.47163 11.434667 16.720703 9.6074219 C 18.84524 8.6937992 20.838669 7.8379587 22.341797 7.1933594 C 23.821781 6.5586849 24.850125 6.1218894 24.966797 6.0742188 z"></path>
-              </svg>
-            </div>
-            <div class="method-info">
-              <div class="method-label">Telegram</div>
-              <div class="method-value">@frostklaat</div>
-            </div>
-          </a>
-
-          <div class="contact-method">
-            <div class="method-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve">
-                <g
-                  style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                  <path
-                    d="M 45 90 c -1.062 0 -2.043 -0.561 -2.583 -1.475 l -4.471 -7.563 c -9.222 -15.591 -17.933 -30.317 -20.893 -36.258 c -2.086 -4.277 -3.138 -8.852 -3.138 -13.62 C 13.916 13.944 27.86 0 45 0 c 17.141 0 31.085 13.944 31.085 31.084 c 0 4.764 -1.051 9.339 -3.124 13.596 c -0.021 0.042 -0.042 0.083 -0.063 0.124 c -3.007 6.005 -11.672 20.654 -20.843 36.159 l -4.472 7.563 C 47.044 89.439 46.062 90 45 90 z M 45 6 C 31.168 6 19.916 17.253 19.916 31.084 c 0 3.848 0.847 7.539 2.518 10.969 c 2.852 5.721 11.909 21.033 20.667 35.839 L 45 81.104 l 1.89 -3.196 c 8.763 -14.813 17.823 -30.131 20.687 -35.879 c 0.012 -0.022 0.023 -0.045 0.035 -0.067 c 1.642 -3.406 2.474 -7.065 2.474 -10.877 C 70.085 17.253 58.832 6 45 6 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 45 44.597 c -8.076 0 -14.646 -6.57 -14.646 -14.646 S 36.924 15.306 45 15.306 c 8.075 0 14.646 6.57 14.646 14.646 S 53.075 44.597 45 44.597 z M 45 21.306 c -4.767 0 -8.646 3.878 -8.646 8.646 s 3.878 8.646 8.646 8.646 c 4.768 0 8.646 -3.878 8.646 -8.646 S 49.768 21.306 45 21.306 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                </g>
-              </svg>
-            </div>
-            <div class="method-info">
-              <div class="method-label">Location</div>
-              <div class="method-value">Serbia</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <p class="footer-text">
-        © 2026 Built with ❤️ by Ivan Deinichenko.
-      </p>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/ivan-deinichenko/" target="_blank" rel="noopener noreferrer"
-           class="footer-link">LinkedIn</a>
-        <a href="mailto:ivan.deinichenko@gmail.com" class="footer-link">Email</a>
-        <a href="/assets/pdf/CV_Ivan_Deinichenko_Senior_Frontend_Engineer.pdf?v=2" download
-           class="footer-link">Resume</a>
-      </div>
-    </div>
+<footer>
+  <span>© 2026 Ivan Deinichenko</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/ivan-deinichenko/" target="_blank" rel="noopener noreferrer"
+       data-ga-event="contact_click" data-ga-method="linkedin" data-ga-location="footer">LinkedIn</a>
+    <a href="mailto:ivan.deinichenko@gmail.com" data-ga-event="contact_click" data-ga-method="email"
+       data-ga-location="footer">Email</a>
+    <a href="/assets/pdf/CV_Ivan_Deinichenko_Senior_Frontend_Engineer.pdf?v=2" download data-ga-event="cv_download"
+       data-ga-location="footer">CV</a>
   </div>
 </footer>
 
 <!-- Scripts -->
-<script type="module" src="/js/main.js"></script>
 <script type="module" src="/js/theme-switcher.js"></script>
-<script type="module" src="/js/animations.js"></script>
-<script type="module" src="/js/particles.js"></script>
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/analytics.js"></script>
 </body>
 </html>
-

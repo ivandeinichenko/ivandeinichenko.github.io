@@ -1,83 +1,91 @@
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  will-change: opacity;
-}
+/* ==========================================
+   ANIMATIONS — see "Дизайн-система" in AGENTS.md
+   Restrained and CSS-only: hero stagger, dimension line,
+   blinking status dot. Nothing else moves.
+   ========================================== */
 
-@keyframes fadeIn {
+@keyframes riseIn {
   from {
     opacity: 0;
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Fade In Up - for scroll animations */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-  will-change: opacity, transform;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger animation for multiple elements */
-.fade-in-up:nth-child(1) {
-  transition-delay: 0.1s;
-}
-.fade-in-up:nth-child(2) {
-  transition-delay: 0.2s;
-}
-.fade-in-up:nth-child(3) {
-  transition-delay: 0.3s;
-}
-.fade-in-up:nth-child(4) {
-  transition-delay: 0.4s;
-}
-.fade-in-up:nth-child(5) {
-  transition-delay: 0.5s;
-}
-.fade-in-up:nth-child(6) {
-  transition-delay: 0.6s;
-}
-
-.skill-progress.animate {
-  animation: progress-fill 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: width;
-}
-
-@keyframes progress-fill {
+@keyframes drawIn {
   from {
-    width: 0;
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 
-.will-animate {
-  will-change: transform, opacity;
+@keyframes blink {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  60%,
+  100% {
+    opacity: 0.15;
+  }
 }
 
-.gpu-accelerated {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+/* Hero stagger */
+.hero-label {
+  animation: riseIn 0.6s ease both;
 }
 
-/* Reduced Motion Support */
+.hero-name {
+  animation: riseIn 0.6s 0.12s ease both;
+}
+
+.dim-line {
+  animation: riseIn 0.6s 0.45s ease both;
+}
+
+.dim-line .dash {
+  animation: drawIn 1s 0.6s ease both;
+}
+
+.dim-line .dash.l {
+  transform-origin: left;
+}
+
+.dim-line .dash.r {
+  transform-origin: right;
+}
+
+.hero-desc {
+  animation: riseIn 0.6s 0.55s ease both;
+}
+
+.status-dot {
+  animation: blink 2.2s infinite;
+}
+
+/* Reduced motion: show everything in its final state, no movement.
+   themes.css already clamps durations; this makes the intent explicit. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .hero-label,
+  .hero-name,
+  .dim-line,
+  .hero-desc {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .dim-line .dash {
+    animation: none;
+    transform: none;
+  }
+
+  .status-dot {
+    animation: none;
   }
 }

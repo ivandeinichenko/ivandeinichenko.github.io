@@ -16,24 +16,14 @@ export default defineConfig({
       }
     },
     rollupOptions: {
-      input: resolve(__dirname, 'index.html'),
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('particles.js')) {
-            return 'particles';
-          }
-          if (id.includes('animations.js')) {
-            return 'animations';
-          }
-        }
-      }
+      input: resolve(__dirname, 'index.html')
     },
     cssCodeSplit: true,
     cssMinify: true,
     chunkSizeWarningLimit: 1000
   },
   server: {
-    port: 3000,
+    port: Number(process.env.PORT) || 3000,
     open: true
   },
   preview: {

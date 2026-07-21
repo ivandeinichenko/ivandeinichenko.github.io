@@ -1,42 +1,42 @@
 # Ivan Deinichenko - Portfolio Website
 
-Modern, tech-inspired portfolio website showcasing my experience as a Senior Frontend Engineer. Built with vanilla HTML, CSS, and JavaScript, featuring glassmorphism effects, particle animations, and full theme switching.
+Portfolio website presenting my work as a Senior Frontend Engineer, designed as an
+engineering datasheet ("ID-13"): part number, specification table, field tests, work log.
+Built with vanilla HTML, CSS and JavaScript — no framework, no runtime dependencies.
 
 ## Features
 
-- **Theme Switching**: Light/Dark mode with localStorage persistence
-- **Fancy Effects**: Particle background, scroll-triggered animations
-- **Fully Responsive**: Mobile-first design, works on all devices
-- **Performance Optimized**: Lazy loading, GPU acceleration, Intersection Observer
-- **Accessible**: ARIA labels, keyboard navigation, reduced motion support
-- **SEO Optimized**: Semantic HTML, meta tags, Open Graph support
+- **Datasheet design system**: one accent colour, 1px hairlines, square corners, no shadows or gradients
+- **Theme Switching**: Light/Dark mode; follows the system preference until an explicit choice is made, then persists to localStorage
+- **Expandable work log**: each role collapses to a single table row and expands to achievements and tech stack
+- **Fully Responsive**: single 760px breakpoint, plus print styles
+- **Accessible**: semantic HTML, ARIA labels, keyboard navigation, `prefers-reduced-motion` support
+- **SEO**: canonical, Open Graph + Twitter Card with a generated og-image, JSON-LD `Person`, sitemap and robots
+- **Analytics**: GA4 with declarative event tracking (`data-ga-*` attributes)
 
 ## Technologies
 
 - **HTML5**: Semantic markup
-- **CSS3**: Custom properties, Grid, Flexbox, animations
+- **CSS3**: Custom properties, Grid, Flexbox, CSS-only animations
 - **JavaScript (ES6+)**: Vanilla JS, no frameworks
 - **Vite**: Build tool for bundling and minification
-- **Canvas API**: Particle effects
-- **Intersection Observer API**: Scroll animations
+- **Intersection Observer API**: section-view analytics
 - **LocalStorage API**: Theme persistence
 
 ## Key Sections
 
-1. **Hero**: Particle background, animated introduction
-2. **About**: Professional summary with animated counters
-3. **Skills**: Categorized skills with animated progress bars
-4. **Experience**: Timeline of work history
-5. **Achievements**: Highlighted accomplishments with metrics
-6. **Contact**: Multiple contact methods
+1. **Hero**: name, dimension line, one-paragraph summary
+2. **Specifications**: stack and measured output as a spec table
+3. **Field Tests**: three featured engagements with metrics
+4. **Work Log**: full history; rows expand to details and tech tags
+5. **Side Projects**: book, YouTube channel, iOS app
+6. **Contact**: CV download and contact links
 
 ## Performance
 
-- **Lighthouse Score**: 95+ across all metrics
-- **First Contentful Paint**: < 1s
-- **Time to Interactive**: < 2s
-- **Fully Responsive**: Mobile-first approach
-- **GPU Accelerated**: Smooth animations
+- Single CSS bundle (~9 kB) and a single JS bundle (~5.5 kB), both minified
+- No images in the page itself, no canvas, no runtime dependencies
+- Non-blocking font loading
 
 ## Accessibility
 
@@ -108,11 +108,11 @@ For more details, see [Build Setup Guide](docs/BUILD_SETUP.md).
 
 ## SEO
 
-- Meta tags for social sharing
-- Open Graph protocol
+- Canonical URL
+- Open Graph + Twitter Card, with a 1200×630 og-image
+- JSON-LD `Person` structured data
+- `robots.txt` and `sitemap.xml`
 - Semantic HTML structure
-- Descriptive alt texts
-- Clean URL structure
 
 ## License
 
@@ -133,11 +133,8 @@ reused, copied, modified, or distributed without explicit permission.
 
 ## Acknowledgments
 
-- Font: [Inter](https://fonts.google.com/specimen/Inter) & [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
-- Icons: SVG icons from [Feather Icons](https://feathericons.com/)
-- Inspiration: Modern web design trends
-
----
-
-Built with ❤️ by Ivan Deinichenko
+- Fonts: [Archivo](https://fonts.google.com/specimen/Archivo),
+  [Archivo Black](https://fonts.google.com/specimen/Archivo+Black),
+  [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) &
+  [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans)
 
