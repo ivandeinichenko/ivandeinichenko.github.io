@@ -18,8 +18,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ivandeinichenko/cv-github-pages.git"
+    "url": "https://github.com/ivandeinichenko/ivandeinichenko.github.io.git"
   },
+  "homepage": "https://ivandeinichenko.github.io/",
   "author": "Ivan Deinichenko",
   "license": "MIT"
 }

@@ -15,7 +15,7 @@
 хостится на **GitHub Pages**. Статический одностраничник на **vanilla
 HTML/CSS/JS** без рантайм-зависимостей, собирается через **Vite 8**.
 
-- Репозиторий: https://github.com/ivandeinichenko/cv-github-pages
+- Репозиторий: https://github.com/ivandeinichenko/ivandeinichenko.github.io
 - Прод-URL: https://ivandeinichenko.github.io/
 - Язык контента сайта: английский.
 
