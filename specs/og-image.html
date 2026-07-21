@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ID-13 — og:image source</title>
+  <!--
+    Source for public/assets/og-image.png (1200x630).
+    Not part of the build — it lives in specs/ and is rendered manually:
+    open it at a 1200x630 viewport and screenshot the .card element.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { background: #101114; }
+    .card {
+      width: 1200px;
+      height: 630px;
+      background: #101114;
+      color: #eceef0;
+      padding: 64px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .top { display: flex; justify-content: space-between; font-size: 20px; color: #8f939a; }
+    .accent { color: #e08b3c; }
+    .name {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 132px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .dim { display: flex; align-items: center; gap: 16px; margin-top: 34px; }
+    .dim .tick { font-size: 18px; color: #e08b3c; white-space: nowrap; }
+    .dim .dash { flex: 1; border-top: 2px dashed #2c2e33; }
+    .desc { font-size: 24px; color: #8f939a; margin-top: 38px; max-width: 900px; line-height: 1.5; }
+    .bottom { display: flex; justify-content: space-between; align-items: flex-end; font-size: 20px; color: #8f939a; }
+    .bars { display: flex; gap: 4px; align-items: flex-end; }
+    .bars span { height: 44px; background: #eceef0; }
+    .bars span.a { background: #e08b3c; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <span>PART NO. <span class="accent">ID-13</span></span>
+    <span>STATUS: <span class="accent">● AVAILABLE</span></span>
+  </div>
+
+  <div>
+    <div class="name">Deinichenko</div>
+    <div class="dim">
+      <span class="tick">|←</span>
+      <span class="dash"></span>
+      <span class="tick">13 YEARS IN PRODUCTION</span>
+      <span class="dash"></span>
+      <span class="tick">→|</span>
+    </div>
+    <div class="desc">Senior Frontend Engineer · Vue/Nuxt · TypeScript · SSR<br>
+      Turning legacy codebases into fast, typed architectures.
+    </div>
+  </div>
+
+  <div class="bottom">
+    <span>IVAN DEINICHENKO · SERBIA / REMOTE</span>
+    <div class="bars">
+      <span style="width:5px"></span><span style="width:3px"></span><span style="width:9px"></span><span class="a"
+                                                                                                          style="width:3px"></span><span
+      style="width:5px"></span><span style="width:11px"></span><span style="width:3px"></span><span
+      style="width:6px"></span><span style="width:3px"></span><span style="width:8px"></span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

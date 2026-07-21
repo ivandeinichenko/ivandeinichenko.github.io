@@ -98,12 +98,25 @@ cp .env.example .env.local
 ```
 
 `.env.production` keeps it `false`, and CI sets it explicitly for release builds.
+Full details in [specs/ENVIRONMENT_VARIABLES.md](specs/ENVIRONMENT_VARIABLES.md).
 
 ## Deployment
 
 Pushing to `main` publishes the site: `.github/workflows/deploy.yml` builds the
 project and deploys `dist/` to GitHub Pages. There is no manual step and no
 `gh-pages` branch. The workflow can also be re-run by hand from the Actions tab.
+
+See [specs/DEVELOPMENT.md](specs/DEVELOPMENT.md) for the full setup, project
+layout and troubleshooting guide.
+
+## Documentation
+
+| Document | Contents |
+|---|---|
+| [specs/DEVELOPMENT.md](specs/DEVELOPMENT.md) | Setup, commands, project layout, deployment, troubleshooting |
+| [specs/DESIGN.md](specs/DESIGN.md) | Visual system: tokens, typography, layout, motion, do/don't |
+| [specs/ENVIRONMENT_VARIABLES.md](specs/ENVIRONMENT_VARIABLES.md) | `VITE_ENABLE_LOGS` and the logger API |
+| [AGENTS.md](AGENTS.md) | Condensed project knowledge base for AI assistants |
 
 ## Browser Support
 

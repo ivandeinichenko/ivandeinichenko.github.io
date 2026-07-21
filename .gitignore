@@ -47,6 +47,10 @@ build/
 
 # Tooling scratch
 .playwright-mcp/
+.history/
+
+# Local notes and drafts (shared documentation lives in specs/)
+docs/
 
 # Cache
 .cache/
