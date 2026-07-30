@@ -51,6 +51,8 @@ build/
 
 # Local notes and drafts (shared documentation lives in specs/)
 docs/
+new-design/
+site-screenshot.png
 
 # Cache
 .cache/
